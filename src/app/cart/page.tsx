@@ -54,7 +54,7 @@ export default function CartPage() {
               {cart.map((item) => (
                 <div key={item.id} className="bg-white rounded-2xl border-2 border-border p-4 flex gap-4">
                   <div className="w-24 h-24 bg-[oklch(0.98_0.005_240)] rounded-xl flex items-center justify-center shrink-0">
-                    <Image src={item.image || "https://s3ng.cashify.in/cashify/store/product/1e6b0a079b59479fa308605df283452e.png"} alt={item.name} width={80} height={80} className="object-contain" />
+                    <Image src={item.images?.[0] || "https://s3ng.cashify.in/cashify/store/product/1e6b0a079b59479fa308605df283452e.png"} alt={item.name} width={80} height={80} className="object-contain" />
                   </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-start">
