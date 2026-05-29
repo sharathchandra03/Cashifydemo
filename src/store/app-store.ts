@@ -19,7 +19,13 @@ export interface CartItem {
   originalPrice: number;
   images: string[];
   quantity: number;
-  [key: string]: unknown;
+  storage?: string;
+  grade?: string;
+  color?: string;
+  warranty?: string;
+  seller?: string;
+  rating?: number;
+  reviews?: number;
 }
 
 interface AppState {

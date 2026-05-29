@@ -152,7 +152,7 @@ export default function ReportsPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.9_0.01_240)" />
                 <XAxis dataKey="month" stroke="oklch(0.5_0.01_240)" fontSize={12} />
                 <YAxis stroke="oklch(0.5_0.01_240)" fontSize={12} tickFormatter={(value) => `₹${value / 100000}L`} />
-                <Tooltip formatter={(value: number) => `₹${value.toLocaleString()}`} />
+                <Tooltip formatter={(value) => `₹${Number(value).toLocaleString()}`} />
                 <Bar dataKey="revenue" fill="oklch(0.6_0.18_195)" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="cost" fill="oklch(0.68_0.19_45)" radius={[4, 4, 0, 0]} />
               </BarChart>
@@ -205,7 +205,7 @@ export default function ReportsPage() {
                 <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.9_0.01_240)" horizontal={false} />
                 <XAxis type="number" stroke="oklch(0.5_0.01_240)" fontSize={12} />
                 <YAxis dataKey="brand" type="category" stroke="oklch(0.5_0.01_240)" fontSize={12} width={60} />
-                <Tooltip formatter={(value: number, name) => [name === "revenue" ? `₹${value.toLocaleString()}` : value, name === "revenue" ? "Revenue" : "Sales"]} />
+                <Tooltip formatter={(value, name) => [name === "revenue" ? `₹${Number(value).toLocaleString()}` : value, name === "revenue" ? "Revenue" : "Sales"]} />
                 <Bar dataKey="sales" fill="oklch(0.6_0.18_195)" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
