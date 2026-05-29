@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { Building2, TrendingUp, Users, BadgeCheck, CheckCircle2 } from "lucide-react";
