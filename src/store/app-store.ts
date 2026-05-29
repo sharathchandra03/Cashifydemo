@@ -12,6 +12,16 @@ interface SellFlowState {
   deductions: { reason: string; amount: number }[];
 }
 
+export interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  originalPrice: number;
+  images: string[];
+  quantity: number;
+  [key: string]: unknown;
+}
+
 interface AppState {
   // Role management
   currentRole: UserRole;
@@ -32,9 +42,11 @@ interface AppState {
   removeFromWishlist: (productId: string) => void;
 
   // Cart (for buy flow)
-  cart: string[];
-  addToCart: (productId: string) => void;
+  cart: CartItem[];
+  addToCart: (product: CartItem) => void;
   removeFromCart: (productId: string) => void;
+  updateCartQuantity: (productId: string, quantity: number) => void;
+  clearCart: () => void;
 }
 
 const initialSellFlow: SellFlowState = {
