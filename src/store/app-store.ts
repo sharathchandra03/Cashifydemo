@@ -43,7 +43,7 @@ interface AppState {
 
   // Cart (for buy flow)
   cart: CartItem[];
-  addToCart: (product: CartItem) => void;
+  addToCart: (product: Omit<CartItem, "quantity">) => void;
   removeFromCart: (productId: string) => void;
   updateCartQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
@@ -117,7 +117,7 @@ export const useAppStore = create<AppState>()(
               ),
             };
           }
-          return { cart: [...state.cart, { ...product, quantity: 1 }] };
+          return { cart: [...state.cart, { ...product, quantity: 1 } as CartItem] };
         }),
       removeFromCart: (productId) =>
         set((state) => ({
