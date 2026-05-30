@@ -56,7 +56,7 @@ export default function TrustSection() {
                   <Icon className="h-5 w-5" />
                 </div>
                 <div className="text-center sm:text-left">
-                  <h4 className="font-semibold text-sm text-[oklch(0.15_0.01_240)]">{g.title}</h4>
+                  <h4 className="font-semibold text-sm text-[#1D1D1F]">{g.title}</h4>
                   <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{g.desc}</p>
                 </div>
               </div>
@@ -84,15 +84,15 @@ export default function TrustSection() {
         {/* Social proof */}
         <div className="mt-14 rounded-3xl dark-gradient p-8 md:p-12 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[oklch(0.6_0.18_195/0.1)] blur-2xl" />
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[rgba(52,120,246,0.1)] blur-2xl" />
           </div>
           <p className="font-[family-name:var(--font-display)] font-bold text-2xl md:text-4xl relative z-10">
             Trusted by{" "}
-            <span className="text-[oklch(0.75_0.18_195)]">1 Crore+</span>
+            <span className="text-[#3478F6]">1 Crore+</span>
             {" "}Users & Major Brands Since 2016
           </p>
           <p className="text-white/50 mt-3 text-sm md:text-base relative z-10 max-w-xl mx-auto">
-            U2U has become India's most trusted platform for buying and selling used devices.
+            MobiTrade has become India&apos;s most trusted platform for buying and selling used devices.
           </p>
           <div className="flex flex-wrap justify-center gap-6 mt-8 relative z-10">
             {[
@@ -102,7 +102,7 @@ export default function TrustSection() {
               { v: "48 Hr", l: "Avg. Payment Time" },
             ].map(({ v, l }) => (
               <div key={l} className="text-center">
-                <div className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.68_0.19_45)]">{v}</div>
+                <div className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#0071E3]">{v}</div>
                 <div className="text-xs text-white/50 mt-0.5">{l}</div>
               </div>
             ))}

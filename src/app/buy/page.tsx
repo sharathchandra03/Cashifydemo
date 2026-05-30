@@ -125,13 +125,13 @@ export default function BuyPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1">
         {/* Header */}
         <div className="bg-white border-b border-border">
           <div className="max-w-7xl mx-auto px-4 py-6">
-            <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl md:text-3xl text-[oklch(0.12_0.01_240)] mb-2">
+            <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl md:text-3xl text-[#1D1D1F] mb-2">
               Buy Refurbished Devices
             </h1>
             <p className="text-muted-foreground">
@@ -150,7 +150,7 @@ export default function BuyPage() {
                 placeholder="Search for devices..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none bg-white"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none bg-white"
               />
             </div>
             <div className="flex gap-2">
@@ -163,20 +163,20 @@ export default function BuyPage() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-2.5 bg-white border-2 border-border rounded-xl focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                className="px-4 py-2.5 bg-white border-2 border-border rounded-xl focus:border-[#3478F6] focus:outline-none"
               >
                 {sortOptions.map(opt => <option key={opt.id} value={opt.id}>{opt.name}</option>)}
               </select>
               <div className="hidden md:flex bg-white border-2 border-border rounded-xl p-1">
                 <button
                   onClick={() => setViewMode("grid")}
-                  className={cn("p-2 rounded-lg transition-colors", viewMode === "grid" ? "bg-[oklch(0.95_0.01_195)]" : "hover:bg-[oklch(0.98_0.005_240)]")}
+                  className={cn("p-2 rounded-lg transition-colors", viewMode === "grid" ? "bg-[#F5F5F7]" : "hover:bg-[#FBFBFD]")}
                 >
                   <Grid3X3 className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => setViewMode("list")}
-                  className={cn("p-2 rounded-lg transition-colors", viewMode === "list" ? "bg-[oklch(0.95_0.01_195)]" : "hover:bg-[oklch(0.98_0.005_240)]")}
+                  className={cn("p-2 rounded-lg transition-colors", viewMode === "list" ? "bg-[#F5F5F7]" : "hover:bg-[#FBFBFD]")}
                 >
                   <List className="h-4 w-4" />
                 </button>
@@ -199,8 +199,8 @@ export default function BuyPage() {
                         className={cn(
                           "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
                           selectedCategory === cat.id
-                            ? "bg-[oklch(0.6_0.18_195)] text-white"
-                            : "hover:bg-[oklch(0.98_0.005_240)]"
+                            ? "bg-[#3478F6] text-white"
+                            : "hover:bg-[#FBFBFD]"
                         )}
                       >
                         {cat.name}
@@ -220,8 +220,8 @@ export default function BuyPage() {
                         className={cn(
                           "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
                           selectedBrand === brand.id
-                            ? "bg-[oklch(0.6_0.18_195)] text-white"
-                            : "hover:bg-[oklch(0.98_0.005_240)]"
+                            ? "bg-[#3478F6] text-white"
+                            : "hover:bg-[#FBFBFD]"
                         )}
                       >
                         {brand.name}
@@ -241,8 +241,8 @@ export default function BuyPage() {
                         className={cn(
                           "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
                           selectedGrade === grade.id
-                            ? "bg-[oklch(0.6_0.18_195)] text-white"
-                            : "hover:bg-[oklch(0.98_0.005_240)]"
+                            ? "bg-[#3478F6] text-white"
+                            : "hover:bg-[#FBFBFD]"
                         )}
                       >
                         {grade.name}
@@ -288,7 +288,7 @@ export default function BuyPage() {
                 {filteredProducts.map((product) => (
                   <div
                     key={product.id}
-                    className="group bg-white rounded-2xl border-2 border-border hover:border-[oklch(0.6_0.18_195)] hover:shadow-lg transition-all duration-200 overflow-hidden"
+                    className="group bg-white rounded-2xl border-2 border-border hover:border-[#3478F6] hover:shadow-lg transition-all duration-200 overflow-hidden"
                   >
                     {/* Image */}
                     <div className="relative h-48 bg-gradient-to-b from-slate-50 to-slate-100 overflow-hidden">
@@ -300,12 +300,12 @@ export default function BuyPage() {
                       />
                       {/* Badges */}
                       <div className="absolute top-3 left-3">
-                        <span className="bg-[oklch(0.68_0.19_45)] text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                        <span className="bg-[#0071E3] text-white text-[10px] font-bold px-2 py-0.5 rounded">
                           {product.discount}% OFF
                         </span>
                       </div>
                       <div className="absolute top-3 right-3">
-                        <span className="bg-[oklch(0.6_0.18_195)] text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                        <span className="bg-[#3478F6] text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
                           Grade {product.grade}
                         </span>
                       </div>
@@ -320,16 +320,16 @@ export default function BuyPage() {
 
                     {/* Content */}
                     <div className="p-4">
-                      <h3 className="font-semibold text-sm text-[oklch(0.15_0.01_240)] line-clamp-2 mb-2">
+                      <h3 className="font-semibold text-sm text-[#1D1D1F] line-clamp-2 mb-2">
                         {product.name}
                       </h3>
 
                       {/* Specs */}
                       <div className="flex flex-wrap gap-1.5 mb-3">
-                        <span className="text-[10px] bg-[oklch(0.97_0.01_195)] text-[oklch(0.4_0.01_240)] px-2 py-0.5 rounded">
+                        <span className="text-[10px] bg-[#F5F5F7] text-[#6E6E73] px-2 py-0.5 rounded">
                           {product.specs.display}
                         </span>
-                        <span className="text-[10px] bg-[oklch(0.97_0.01_195)] text-[oklch(0.4_0.01_240)] px-2 py-0.5 rounded">
+                        <span className="text-[10px] bg-[#F5F5F7] text-[#6E6E73] px-2 py-0.5 rounded">
                           {product.warranty} Warranty
                         </span>
                       </div>
@@ -349,7 +349,7 @@ export default function BuyPage() {
 
                       {/* Price */}
                       <div className="flex items-baseline gap-2 mb-3">
-                        <span className="font-[family-name:var(--font-display)] font-bold text-lg text-[oklch(0.6_0.18_195)]">
+                        <span className="font-[family-name:var(--font-display)] font-bold text-lg text-[#3478F6]">
                           ₹{product.price.toLocaleString()}
                         </span>
                         <span className="text-xs text-muted-foreground line-through">
@@ -360,7 +360,7 @@ export default function BuyPage() {
                       {/* CTA */}
                       <Link
                         href={`/buy/${product.id}`}
-                        className="w-full flex items-center justify-center gap-2 py-2.5 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)] transition-colors"
+                        className="w-full flex items-center justify-center gap-2 py-2.5 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8] transition-colors"
                       >
                         View Details <ArrowRight className="h-4 w-4" />
                       </Link>
@@ -401,7 +401,7 @@ export default function BuyPage() {
                       onClick={() => setSelectedCategory(cat.id)}
                       className={cn(
                         "px-3 py-1.5 rounded-lg text-sm",
-                        selectedCategory === cat.id ? "bg-[oklch(0.6_0.18_195)] text-white" : "bg-[oklch(0.97_0.01_195)]"
+                        selectedCategory === cat.id ? "bg-[#3478F6] text-white" : "bg-[#F5F5F7]"
                       )}
                     >
                       {cat.name}
@@ -418,7 +418,7 @@ export default function BuyPage() {
                       onClick={() => setSelectedBrand(brand.id)}
                       className={cn(
                         "px-3 py-1.5 rounded-lg text-sm",
-                        selectedBrand === brand.id ? "bg-[oklch(0.6_0.18_195)] text-white" : "bg-[oklch(0.97_0.01_195)]"
+                        selectedBrand === brand.id ? "bg-[#3478F6] text-white" : "bg-[#F5F5F7]"
                       )}
                     >
                       {brand.name}

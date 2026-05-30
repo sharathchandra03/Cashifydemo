@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    q: "How does the selling process work on U2U?",
-    a: "Select your device, answer a few questions about its condition, get an instant quote, schedule a free pickup at your convenience, and receive payment immediately after verification — all within 24 hours.",
+    q: "How does the selling process work on MobiTrade?",
+    a: "Select your device, answer a few questions about its condition, get an instant quote, schedule a free pickup at your convenience, and receive payment immediately after verification - all within 24 hours.",
   },
   {
     q: "How is the price of my device determined?",
@@ -27,11 +27,11 @@ const faqs = [
   },
   {
     q: "Do refurbished devices come with a warranty?",
-    a: "Yes! All Grade A+ and Grade A devices come with a 12-month U2U warranty. Grade B devices carry a 6-month warranty. Our service centers are located in 50+ cities across India.",
+    a: "Yes! All Grade A+ and Grade A devices come with a 12-month MobiTrade warranty. Grade B devices carry a 6-month warranty. Our service centers are located in 50+ cities across India.",
   },
   {
-    q: "Which cities does U2U operate in?",
-    a: "U2U currently operates in 200+ cities across India including all metros (Delhi, Mumbai, Bangalore, Chennai, Hyderabad, Pune, Kolkata) and Tier-2 cities. Check availability for your pincode on our app.",
+    q: "Which cities does MobiTrade operate in?",
+    a: "MobiTrade currently operates in 200+ cities across India including all metros (Delhi, Mumbai, Bangalore, Chennai, Hyderabad, Pune, Kolkata) and Tier-2 cities. Check availability for your pincode on our app.",
   },
 ];
 
@@ -39,10 +39,10 @@ function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
   return (
     <div
       className={cn(
-        "border rounded-2xl px-5 transition-all duration-200 shadow-sm hover:shadow-md",
+        "border rounded-[20px] px-5 transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)]",
         isOpen
-          ? "border-[oklch(0.6_0.18_195/0.4)] bg-[oklch(0.98_0.01_195)]"
-          : "border-border bg-white"
+          ? "border-[#3478F6]/40 bg-[rgba(52,120,246,0.05)]"
+          : "border-black/[0.06] bg-white hover:border-[#3478F6]/20"
       )}
     >
       <button
@@ -52,15 +52,15 @@ function FAQItem({ q, a, isOpen, onToggle }: { q: string; a: string; isOpen: boo
         <span
           className={cn(
             "font-semibold text-sm md:text-base transition-colors",
-            isOpen ? "text-[oklch(0.6_0.18_195)]" : "text-[oklch(0.15_0.01_240)]"
+            isOpen ? "text-[#3478F6]" : "text-[#1D1D1F]"
           )}
         >
           {q}
         </span>
         <ChevronDown
           className={cn(
-            "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
-            isOpen && "rotate-180 text-[oklch(0.6_0.18_195)]"
+            "h-4 w-4 shrink-0 text-[#6E6E73] transition-transform duration-200",
+            isOpen && "rotate-180 text-[#3478F6]"
           )}
         />
       </button>
@@ -84,14 +84,14 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
-          <span className="text-xs font-semibold tracking-widest uppercase text-[oklch(0.6_0.18_195)] mb-2 block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-[#3478F6] mb-2 block">
             Got Questions?
           </span>
-          <h2 className="font-[family-name:var(--font-display)] font-bold text-2xl md:text-4xl text-[oklch(0.12_0.01_240)]">
+          <h2 className="font-[family-name:var(--font-display)] font-bold text-2xl md:text-4xl text-[#1D1D1F]">
             Frequently Asked Questions
           </h2>
           <p className="text-muted-foreground mt-2 text-sm">
-            Everything you need to know about selling and buying on U2U.
+            Everything you need to know about selling and buying on MobiTrade.
           </p>
         </div>
 
@@ -109,14 +109,14 @@ export default function FAQ() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-8 text-center p-6 rounded-2xl bg-[oklch(0.97_0.01_195)] border border-[oklch(0.6_0.18_195/0.2)]">
-          <p className="text-sm font-medium text-[oklch(0.2_0.01_240)]">Still have questions?</p>
+        <div className="mt-8 text-center p-6 rounded-2xl bg-[#F5F5F7] border border-[rgba(52,120,246,0.2)]">
+          <p className="text-sm font-medium text-[#1D1D1F]">Still have questions?</p>
           <p className="text-xs text-muted-foreground mt-1 mb-3">
             Our support team is available 24/7 to help you out.
           </p>
           <a
-            href="mailto:support@u2u.in"
-            className="inline-flex items-center gap-2 bg-[oklch(0.6_0.18_195)] hover:bg-[oklch(0.55_0.18_195)] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors"
+            href="mailto:support@mobitrade.com"
+            className="inline-flex items-center gap-2 bg-[#3478F6] hover:bg-[#1D5FD8] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors"
           >
             Contact Support
           </a>

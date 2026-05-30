@@ -3,7 +3,7 @@ import Footer from "@/components/shared/Footer";
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1 py-12 px-4">
         <div className="max-w-3xl mx-auto">
@@ -17,7 +17,7 @@ export default function TermsPage() {
             <section className="mb-8">
               <h2 className="font-semibold text-xl mb-4">1. Acceptance of Terms</h2>
               <p className="text-muted-foreground mb-4">
-                By accessing or using U2U&apos;s services, you agree to be bound by these Terms of Service. 
+                By accessing or using MobiTrade&apos;s services, you agree to be bound by these Terms of Service. 
                 If you do not agree to these terms, please do not use our services.
               </p>
             </section>
@@ -26,7 +26,7 @@ export default function TermsPage() {
               <h2 className="font-semibold text-xl mb-4">2. Eligibility</h2>
               <p className="text-muted-foreground mb-4">
                 You must be at least 18 years old and capable of forming a binding contract to use our services. 
-                By using U2U, you represent and warrant that you meet all eligibility requirements.
+                By using MobiTrade, you represent and warrant that you meet all eligibility requirements.
               </p>
             </section>
 
@@ -46,7 +46,7 @@ export default function TermsPage() {
             <section className="mb-8">
               <h2 className="font-semibold text-xl mb-4">4. Buying and Selling</h2>
               <p className="text-muted-foreground mb-4">
-                When using U2U to buy or sell devices:
+                When using MobiTrade to buy or sell devices:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li>You must accurately describe the condition of devices you sell</li>
@@ -73,7 +73,7 @@ export default function TermsPage() {
             <section className="mb-8">
               <h2 className="font-semibold text-xl mb-4">6. Limitation of Liability</h2>
               <p className="text-muted-foreground mb-4">
-                U2U is not liable for any indirect, incidental, special, consequential, or punitive damages 
+                MobiTrade is not liable for any indirect, incidental, special, consequential, or punitive damages 
                 resulting from your use of our services. Our total liability shall not exceed the amount 
                 you paid to us in the six months preceding the claim.
               </p>
@@ -90,7 +90,7 @@ export default function TermsPage() {
             <section className="mb-8">
               <h2 className="font-semibold text-xl mb-4">8. Contact Information</h2>
               <p className="text-muted-foreground">
-                For questions about these Terms, please contact us at legal@u2u.com.
+                For questions about these Terms, please contact us at legal@mobitrade.com.
               </p>
             </section>
           </div>

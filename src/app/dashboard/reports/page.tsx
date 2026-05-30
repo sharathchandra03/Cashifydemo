@@ -30,11 +30,11 @@ const monthlyRevenue = [
 ];
 
 const categoryDistribution = [
-  { name: "Mobile", value: 45, color: "oklch(0.6_0.18_195)" },
-  { name: "Laptop", value: 25, color: "oklch(0.55_0.15_250)" },
-  { name: "Tablet", value: 15, color: "oklch(0.68_0.19_45)" },
-  { name: "Watch", value: 10, color: "oklch(0.5_0.1_80)" },
-  { name: "Other", value: 5, color: "oklch(0.7_0.02_240)" },
+  { name: "Mobile", value: 45, color: "#3478F6" },
+  { name: "Laptop", value: 25, color: "#5B7CF5" },
+  { name: "Tablet", value: 15, color: "#0071E3" },
+  { name: "Watch", value: 10, color: "#D4A574" },
+  { name: "Other", value: 5, color: "#A1A1A6" },
 ];
 
 const brandPerformance = [
@@ -74,7 +74,7 @@ export default function ReportsPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.12_0.01_240)]">
+          <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#1D1D1F]">
             Reports & Analytics
           </h1>
           <p className="text-sm text-muted-foreground">
@@ -85,7 +85,7 @@ export default function ReportsPage() {
           <select
             value={dateRange}
             onChange={(e) => setDateRange(e.target.value)}
-            className="px-4 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none bg-white"
+            className="px-4 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none bg-white"
           >
             <option value="last7days">Last 7 Days</option>
             <option value="last30days">Last 30 Days</option>
@@ -93,7 +93,7 @@ export default function ReportsPage() {
             <option value="lastMonth">Last Month</option>
             <option value="thisQuarter">This Quarter</option>
           </select>
-          <button className="flex items-center gap-2 px-4 py-2.5 bg-white border-2 border-border rounded-xl font-medium hover:bg-[oklch(0.98_0.005_240)]">
+          <button className="flex items-center gap-2 px-4 py-2.5 bg-white border-2 border-border rounded-xl font-medium hover:bg-[#FBFBFD]">
             <Download className="h-4 w-4" /> Export
           </button>
         </div>
@@ -108,8 +108,8 @@ export default function ReportsPage() {
             className={cn(
               "px-4 py-2.5 text-sm font-medium capitalize transition-colors border-b-2",
               activeTab === tab
-                ? "border-[oklch(0.6_0.18_195)] text-[oklch(0.6_0.18_195)]"
-                : "border-transparent text-muted-foreground hover:text-[oklch(0.3_0.01_240)]"
+                ? "border-[#3478F6] text-[#3478F6]"
+                : "border-transparent text-muted-foreground hover:text-[#6E6E73]"
             )}
           >
             {tab}
@@ -122,8 +122,8 @@ export default function ReportsPage() {
         {stats.map((stat) => (
           <div key={stat.label} className="bg-white rounded-2xl border-2 border-border p-4">
             <div className="flex items-center justify-between mb-3">
-              <div className="w-10 h-10 rounded-xl bg-[oklch(0.97_0.01_195)] flex items-center justify-center">
-                <stat.icon className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+              <div className="w-10 h-10 rounded-xl bg-[#F5F5F7] flex items-center justify-center">
+                <stat.icon className="h-5 w-5 text-[#3478F6]" />
               </div>
               <span className={cn(
                 "flex items-center gap-0.5 text-xs font-medium",
@@ -133,7 +133,7 @@ export default function ReportsPage() {
                 {stat.change}
               </span>
             </div>
-            <p className="text-2xl font-[family-name:var(--font-display)] font-bold text-[oklch(0.12_0.01_240)]">
+            <p className="text-2xl font-[family-name:var(--font-display)] font-bold text-[#1D1D1F]">
               {stat.value}
             </p>
             <p className="text-xs text-muted-foreground">{stat.label}</p>
@@ -145,16 +145,16 @@ export default function ReportsPage() {
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Revenue Chart */}
         <div className="bg-white rounded-2xl border-2 border-border p-5">
-          <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4">Revenue vs Cost</h3>
+          <h3 className="font-semibold text-[#1D1D1F] mb-4">Revenue vs Cost</h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={monthlyRevenue}>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.9_0.01_240)" />
-                <XAxis dataKey="month" stroke="oklch(0.5_0.01_240)" fontSize={12} />
-                <YAxis stroke="oklch(0.5_0.01_240)" fontSize={12} tickFormatter={(value) => `₹${value / 100000}L`} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E5E5" />
+                <XAxis dataKey="month" stroke="#6E6E73" fontSize={12} />
+                <YAxis stroke="#6E6E73" fontSize={12} tickFormatter={(value) => `₹${value / 100000}L`} />
                 <Tooltip formatter={(value) => `₹${Number(value).toLocaleString()}`} />
-                <Bar dataKey="revenue" fill="oklch(0.6_0.18_195)" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="cost" fill="oklch(0.68_0.19_45)" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="revenue" fill="#3478F6" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="cost" fill="#0071E3" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -162,7 +162,7 @@ export default function ReportsPage() {
 
         {/* Category Distribution */}
         <div className="bg-white rounded-2xl border-2 border-border p-5">
-          <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4">Sales by Category</h3>
+          <h3 className="font-semibold text-[#1D1D1F] mb-4">Sales by Category</h3>
           <div className="h-64 flex items-center">
             <div className="w-1/2 h-full">
               <ResponsiveContainer width="100%" height="100%">
@@ -198,15 +198,15 @@ export default function ReportsPage() {
 
         {/* Brand Performance */}
         <div className="bg-white rounded-2xl border-2 border-border p-5">
-          <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4">Brand Performance</h3>
+          <h3 className="font-semibold text-[#1D1D1F] mb-4">Brand Performance</h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={brandPerformance} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.9_0.01_240)" horizontal={false} />
-                <XAxis type="number" stroke="oklch(0.5_0.01_240)" fontSize={12} />
-                <YAxis dataKey="brand" type="category" stroke="oklch(0.5_0.01_240)" fontSize={12} width={60} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E5E5" horizontal={false} />
+                <XAxis type="number" stroke="#6E6E73" fontSize={12} />
+                <YAxis dataKey="brand" type="category" stroke="#6E6E73" fontSize={12} width={60} />
                 <Tooltip formatter={(value, name) => [name === "revenue" ? `₹${Number(value).toLocaleString()}` : value, name === "revenue" ? "Revenue" : "Sales"]} />
-                <Bar dataKey="sales" fill="oklch(0.6_0.18_195)" radius={[0, 4, 4, 0]} />
+                <Bar dataKey="sales" fill="#3478F6" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -214,15 +214,15 @@ export default function ReportsPage() {
 
         {/* Weekly Trend */}
         <div className="bg-white rounded-2xl border-2 border-border p-5">
-          <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4">Weekly Sales Trend</h3>
+          <h3 className="font-semibold text-[#1D1D1F] mb-4">Weekly Sales Trend</h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={weeklyTrend}>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.9_0.01_240)" />
-                <XAxis dataKey="day" stroke="oklch(0.5_0.01_240)" fontSize={12} />
-                <YAxis stroke="oklch(0.5_0.01_240)" fontSize={12} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E5E5" />
+                <XAxis dataKey="day" stroke="#6E6E73" fontSize={12} />
+                <YAxis stroke="#6E6E73" fontSize={12} />
                 <Tooltip />
-                <Line type="monotone" dataKey="sales" stroke="oklch(0.6_0.18_195)" strokeWidth={3} dot={{ fill: "oklch(0.6_0.18_195)" }} />
+                <Line type="monotone" dataKey="sales" stroke="#3478F6" strokeWidth={3} dot={{ fill: "#3478F6" }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -232,7 +232,7 @@ export default function ReportsPage() {
       {/* Branch Comparison (Super Admin only) */}
       {isSuperAdmin && (
         <div className="bg-white rounded-2xl border-2 border-border p-5">
-          <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4">Branch Performance Comparison</h3>
+          <h3 className="font-semibold text-[#1D1D1F] mb-4">Branch Performance Comparison</h3>
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -253,7 +253,7 @@ export default function ReportsPage() {
                   { name: "Chennai T Nagar", sales: 76, revenue: 5450000, aov: 71710, conversion: "64%" },
                 ].map((branch) => (
                   <tr key={branch.name} className="border-t border-border">
-                    <td className="py-3 font-medium text-[oklch(0.15_0.01_240)]">{branch.name}</td>
+                    <td className="py-3 font-medium text-[#1D1D1F]">{branch.name}</td>
                     <td className="py-3">{branch.sales}</td>
                     <td className="py-3">₹{(branch.revenue / 100000).toFixed(1)}L</td>
                     <td className="py-3">₹{branch.aov.toLocaleString()}</td>

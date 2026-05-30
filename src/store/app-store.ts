@@ -140,7 +140,7 @@ export const useAppStore = create<AppState>()(
       clearCart: () => set({ cart: [] }),
     }),
     {
-      name: "u2u-storage",
+      name: "mobitrade-storage",
       partialize: (state) => ({
         wishlist: state.wishlist,
         cart: state.cart,

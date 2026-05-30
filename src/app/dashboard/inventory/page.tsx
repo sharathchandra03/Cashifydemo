@@ -30,9 +30,9 @@ const statusConfig: Record<string, { label: string; color: string; icon: React.E
 };
 
 const gradeConfig: Record<string, { label: string; color: string }> = {
-  "A+": { label: "A+", color: "bg-[oklch(0.6_0.18_195)] text-white" },
-  "A": { label: "A", color: "bg-[oklch(0.55_0.15_250)] text-white" },
-  "B": { label: "B", color: "bg-[oklch(0.5_0.1_80)] text-white" },
+  "A+": { label: "A+", color: "bg-[#3478F6] text-white" },
+  "A": { label: "A", color: "bg-[#5B7CF5] text-white" },
+  "B": { label: "B", color: "bg-[#D4A574] text-white" },
 };
 
 export default function InventoryPage() {
@@ -63,7 +63,7 @@ export default function InventoryPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.12_0.01_240)]">
+          <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#1D1D1F]">
             Inventory Management
           </h1>
           <p className="text-sm text-muted-foreground">
@@ -72,7 +72,7 @@ export default function InventoryPage() {
         </div>
         <button
           onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-2 px-4 py-2.5 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)] transition-colors"
+          className="flex items-center gap-2 px-4 py-2.5 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8] transition-colors"
         >
           <Plus className="h-4 w-4" /> Add Device
         </button>
@@ -81,7 +81,7 @@ export default function InventoryPage() {
       {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { label: "Total Devices", value: stats.total, color: "bg-[oklch(0.6_0.18_195)]" },
+          { label: "Total Devices", value: stats.total, color: "bg-[#3478F6]" },
           { label: "In Stock", value: stats.inStock, color: "bg-green-500" },
           { label: "Sold", value: stats.sold, color: "bg-blue-500" },
           { label: "Pending", value: stats.pending, color: "bg-amber-500" },
@@ -92,7 +92,7 @@ export default function InventoryPage() {
                 <Package className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-2xl font-[family-name:var(--font-display)] font-bold text-[oklch(0.12_0.01_240)]">
+                <p className="text-2xl font-[family-name:var(--font-display)] font-bold text-[#1D1D1F]">
                   {stat.value}
                 </p>
                 <p className="text-xs text-muted-foreground">{stat.label}</p>
@@ -112,13 +112,13 @@ export default function InventoryPage() {
               placeholder="Search by device, ID, or IMEI..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
             />
           </div>
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-4 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+            className="px-4 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
           >
             <option value="all">All Status</option>
             <option value="in_stock">In Stock</option>
@@ -130,7 +130,7 @@ export default function InventoryPage() {
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="px-4 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+            className="px-4 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
           >
             <option value="all">All Categories</option>
             <option value="mobile">Mobile</option>
@@ -145,7 +145,7 @@ export default function InventoryPage() {
       <div className="bg-white rounded-2xl border-2 border-border overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-[oklch(0.98_0.005_240)]">
+            <thead className="bg-[#FBFBFD]">
               <tr className="text-left text-xs font-medium text-muted-foreground">
                 <th className="px-4 py-3">Device</th>
                 <th className="px-4 py-3">ID / IMEI</th>
@@ -161,20 +161,20 @@ export default function InventoryPage() {
               {filteredInventory.map((item) => {
                 const StatusIcon = statusConfig[item.status].icon;
                 return (
-                  <tr key={item.id} className="border-t border-border hover:bg-[oklch(0.98_0.005_240)]">
+                  <tr key={item.id} className="border-t border-border hover:bg-[#FBFBFD]">
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center">
-                          <Package className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+                          <Package className="h-5 w-5 text-[#3478F6]" />
                         </div>
                         <div>
-                          <p className="font-medium text-[oklch(0.15_0.01_240)]">{item.device}</p>
+                          <p className="font-medium text-[#1D1D1F]">{item.device}</p>
                           <p className="text-xs text-muted-foreground capitalize">{item.category} • {item.brand}</p>
                         </div>
                       </div>
                     </td>
                     <td className="px-4 py-3">
-                      <p className="font-medium text-[oklch(0.15_0.01_240)]">{item.id}</p>
+                      <p className="font-medium text-[#1D1D1F]">{item.id}</p>
                       <p className="text-xs text-muted-foreground">{item.imei}</p>
                     </td>
                     <td className="px-4 py-3">
@@ -189,17 +189,17 @@ export default function InventoryPage() {
                       </span>
                     </td>
                     <td className="px-4 py-3">
-                      <p className="font-medium text-[oklch(0.15_0.01_240)]">₹{item.price.toLocaleString()}</p>
+                      <p className="font-medium text-[#1D1D1F]">₹{item.price.toLocaleString()}</p>
                       <p className="text-xs text-muted-foreground">Cost: ₹{item.cost.toLocaleString()}</p>
                     </td>
                     <td className="px-4 py-3 text-muted-foreground">{item.branch}</td>
                     <td className="px-4 py-3 text-muted-foreground">{item.added}</td>
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-1">
-                        <button className="p-1.5 rounded-lg hover:bg-[oklch(0.97_0.01_195)] text-[oklch(0.6_0.18_195)]">
+                        <button className="p-1.5 rounded-lg hover:bg-[#F5F5F7] text-[#3478F6]">
                           <Eye className="h-4 w-4" />
                         </button>
-                        <button className="p-1.5 rounded-lg hover:bg-[oklch(0.97_0.01_195)] text-[oklch(0.6_0.18_195)]">
+                        <button className="p-1.5 rounded-lg hover:bg-[#F5F5F7] text-[#3478F6]">
                           <Edit2 className="h-4 w-4" />
                         </button>
                         <button className="p-1.5 rounded-lg hover:bg-red-50 text-red-500">
@@ -232,7 +232,7 @@ export default function InventoryPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Category</label>
-                  <select className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none">
+                  <select className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none">
                     <option>Mobile</option>
                     <option>Laptop</option>
                     <option>Tablet</option>
@@ -241,7 +241,7 @@ export default function InventoryPage() {
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Brand</label>
-                  <select className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none">
+                  <select className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none">
                     <option>Apple</option>
                     <option>Samsung</option>
                     <option>OnePlus</option>
@@ -252,14 +252,14 @@ export default function InventoryPage() {
                 <label className="text-sm font-medium mb-1.5 block">Model</label>
                 <input
                   type="text"
-                  className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                  className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                   placeholder="e.g. iPhone 14 Pro Max"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Grade</label>
-                  <select className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none">
+                  <select className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none">
                     <option>A+</option>
                     <option>A</option>
                     <option>B</option>
@@ -267,7 +267,7 @@ export default function InventoryPage() {
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Status</label>
-                  <select className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none">
+                  <select className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none">
                     <option>In Stock</option>
                     <option>Pending</option>
                   </select>
@@ -278,7 +278,7 @@ export default function InventoryPage() {
                   <label className="text-sm font-medium mb-1.5 block">Selling Price</label>
                   <input
                     type="number"
-                    className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                    className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                     placeholder="₹"
                   />
                 </div>
@@ -286,7 +286,7 @@ export default function InventoryPage() {
                   <label className="text-sm font-medium mb-1.5 block">Cost Price</label>
                   <input
                     type="number"
-                    className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                    className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                     placeholder="₹"
                   />
                 </div>
@@ -295,7 +295,7 @@ export default function InventoryPage() {
                 <label className="text-sm font-medium mb-1.5 block">IMEI / Serial Number</label>
                 <input
                   type="text"
-                  className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                  className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                   placeholder="Enter IMEI or Serial Number"
                 />
               </div>
@@ -303,14 +303,14 @@ export default function InventoryPage() {
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  className="flex-1 py-2.5 border-2 border-border rounded-xl font-medium hover:bg-[oklch(0.98_0.005_240)]"
+                  className="flex-1 py-2.5 border-2 border-border rounded-xl font-medium hover:bg-[#FBFBFD]"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   onClick={(e) => { e.preventDefault(); setShowAddModal(false); }}
-                  className="flex-1 py-2.5 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)]"
+                  className="flex-1 py-2.5 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8]"
                 >
                   Add Device
                 </button>

@@ -70,8 +70,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   // Prevent hydration mismatch by showing loading state until mounted
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-[oklch(0.98_0.005_240)] flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-[oklch(0.6_0.18_195)] border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen bg-[#FBFBFD] flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-[#3478F6] border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -80,35 +80,35 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const roleInfo = roleConfig[currentRole as UserRole] || roleConfig.superadmin;
 
   return (
-    <div className="min-h-screen bg-[oklch(0.98_0.005_240)] flex">
+    <div className="min-h-screen bg-[#FBFBFD] flex">
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex w-64 flex-col bg-white border-r border-border">
+      <aside className="hidden lg:flex w-64 flex-col bg-white border-r border-black/[0.06]">
         {/* Logo */}
-        <div className="p-4 border-b border-border">
-          <Link href="/" className="flex items-center gap-1.5">
-            <div className="w-8 h-8 rounded-lg bg-[oklch(0.6_0.18_195)] flex items-center justify-center">
-              <span className="text-white font-[family-name:var(--font-display)] font-800 text-sm">U</span>
+        <div className="p-4 border-b border-black/[0.06]">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-9 h-9 rounded-xl bg-[#0F044A] flex items-center justify-center">
+              <span className="text-white font-extrabold text-sm">U</span>
             </div>
-            <span className="font-[family-name:var(--font-display)] font-extrabold text-xl text-[oklch(0.12_0.01_240)]">
+            <span className="font-extrabold text-xl text-[#1D1D1F] tracking-tight">
               2U
             </span>
           </Link>
         </div>
 
         {/* Role Switcher */}
-        <div className="p-3 border-b border-border">
+        <div className="p-3 border-b border-black/[0.06]">
           <button
             onClick={() => setRoleSwitcherOpen(!roleSwitcherOpen)}
-            className="w-full flex items-center gap-3 p-3 rounded-xl bg-[oklch(0.97_0.01_195)] hover:bg-[oklch(0.95_0.02_195)] transition-colors"
+            className="w-full flex items-center gap-3 p-3 rounded-[14px] bg-[#F5F5F7] hover:bg-[rgba(52,120,246,0.08)] transition-all duration-300"
           >
-            <div className={cn("w-10 h-10 rounded-full flex items-center justify-center text-white", roleInfo.color)}>
+            <div className={cn("w-10 h-10 rounded-full flex items-center justify-center text-white shadow-[0_4px_12px_rgba(0,0,0,0.15)]", roleInfo.color === "bg-purple-500" ? "bg-[#3478F6]" : roleInfo.color === "bg-blue-500" ? "bg-[#0071E3]" : "bg-[#34C759]")}>
               <roleInfo.icon className="h-5 w-5" />
             </div>
             <div className="flex-1 text-left">
-              <p className="font-medium text-sm text-[oklch(0.15_0.01_240)]">{roleInfo.label}</p>
-              <p className="text-xs text-muted-foreground">Switch role</p>
+              <p className="font-semibold text-sm text-[#1D1D1F]">{roleInfo.label}</p>
+              <p className="text-xs text-[#6E6E73]">Switch role</p>
             </div>
-            <ChevronDown className={cn("h-4 w-4 text-muted-foreground transition-transform", roleSwitcherOpen && "rotate-180")} />
+            <ChevronDown className={cn("h-4 w-4 text-[#6E6E73] transition-transform", roleSwitcherOpen && "rotate-180")} />
           </button>
 
           {/* Role Options */}
@@ -121,8 +121,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     key={role}
                     onClick={() => { setRole(role); setRoleSwitcherOpen(false); }}
                     className={cn(
-                      "w-full flex items-center gap-3 p-2.5 rounded-lg text-sm transition-colors",
-                      currentRole === role ? "bg-[oklch(0.6_0.18_195)] text-white" : "hover:bg-[oklch(0.98_0.005_240)]"
+                      "w-full flex items-center gap-3 p-2.5 rounded-xl text-sm font-medium transition-all duration-300",
+                      currentRole === role ? "bg-[#3478F6] text-white shadow-[0_4px_12px_rgba(52,120,246,0.3)]" : "hover:bg-[#F5F5F7] text-[#6E6E73]"
                     )}
                   >
                     {RoleIcon && <RoleIcon className="h-4 w-4" />}
@@ -143,10 +143,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
+                  "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300",
                   isActive
-                    ? "bg-[oklch(0.6_0.18_195)] text-white"
-                    : "text-[oklch(0.3_0.01_240)] hover:bg-[oklch(0.97_0.01_195)]"
+                    ? "bg-[#3478F6] text-white shadow-[0_4px_16px_rgba(52,120,246,0.3)]"
+                    : "text-[#6E6E73] hover:bg-[rgba(52,120,246,0.08)] hover:text-[#3478F6]"
                 )}
               >
                 <item.icon className="h-4 w-4" />
@@ -157,10 +157,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </nav>
 
         {/* Bottom Actions */}
-        <div className="p-3 border-t border-border space-y-1">
+        <div className="p-3 border-t border-black/[0.06] space-y-1">
           <Link
             href="/"
-            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-[oklch(0.3_0.01_240)] hover:bg-[oklch(0.97_0.01_195)] transition-colors"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-[#6E6E73] hover:bg-[#F5F5F7] hover:text-[#3478F6] transition-all duration-300"
           >
             <LogOut className="h-4 w-4" />
             Back to Store
@@ -169,25 +169,25 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
 
       {/* Mobile Header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-black/[0.06] shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
         <div className="flex items-center justify-between p-4">
-          <Link href="/" className="flex items-center gap-1.5">
-            <div className="w-8 h-8 rounded-lg bg-[oklch(0.6_0.18_195)] flex items-center justify-center">
-              <span className="text-white font-[family-name:var(--font-display)] font-800 text-sm">U</span>
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-9 h-9 rounded-xl bg-[#0F044A] flex items-center justify-center">
+              <span className="text-white font-extrabold text-sm">U</span>
             </div>
-            <span className="font-[family-name:var(--font-display)] font-extrabold text-xl text-[oklch(0.12_0.01_240)]">
+            <span className="font-extrabold text-xl text-[#1D1D1F] tracking-tight">
               2U
             </span>
           </Link>
           <div className="flex items-center gap-2">
-            <button className="p-2 rounded-lg hover:bg-[oklch(0.97_0.01_195)]">
-              <Bell className="h-5 w-5 text-[oklch(0.3_0.01_240)]" />
+            <button className="p-2.5 rounded-xl hover:bg-[#F5F5F7] transition-colors">
+              <Bell className="h-5 w-5 text-[#6E6E73]" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 rounded-lg hover:bg-[oklch(0.97_0.01_195)]"
+              className="p-2.5 rounded-xl hover:bg-[#F5F5F7] transition-colors"
             >
-              <Menu className="h-5 w-5 text-[oklch(0.3_0.01_240)]" />
+              <Menu className="h-5 w-5 text-[#1D1D1F]" />
             </button>
           </div>
         </div>
@@ -197,11 +197,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50">
           <div className="absolute inset-0 bg-black/50" onClick={() => setMobileMenuOpen(false)} />
-          <div className="absolute right-0 top-0 bottom-0 w-72 bg-white">
-            <div className="flex items-center justify-between p-4 border-b border-border">
-              <span className="font-semibold">Menu</span>
-              <button onClick={() => setMobileMenuOpen(false)}>
-                <X className="h-5 w-5" />
+          <div className="absolute right-0 top-0 bottom-0 w-72 bg-white shadow-[0_24px_64px_rgba(0,0,0,0.15)]">
+            <div className="flex items-center justify-between p-4 border-b border-black/[0.06]">
+              <span className="font-semibold text-[#1D1D1F]">Menu</span>
+              <button onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-xl hover:bg-[#F5F5F7]">
+                <X className="h-5 w-5 text-[#6E6E73]" />
               </button>
             </div>
             <nav className="p-3 space-y-1">
@@ -211,10 +211,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
+                    "flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-300",
                     pathname === item.href
-                      ? "bg-[oklch(0.6_0.18_195)] text-white"
-                      : "text-[oklch(0.3_0.01_240)] hover:bg-[oklch(0.97_0.01_195)]"
+                      ? "bg-[#3478F6] text-white shadow-[0_4px_16px_rgba(52,120,246,0.3)]"
+                      : "text-[#6E6E73] hover:bg-[#F5F5F7] hover:text-[#3478F6]"
                   )}
                 >
                   <item.icon className="h-4 w-4" />
@@ -229,16 +229,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Main Content */}
       <main className="flex-1 lg:ml-0 pt-16 lg:pt-0">
         {/* Desktop Header */}
-        <header className="hidden lg:flex items-center justify-between p-4 border-b border-border bg-white">
-          <h1 className="font-semibold text-[oklch(0.15_0.01_240)]">
+        <header className="hidden lg:flex items-center justify-between p-5 border-b border-black/[0.06] bg-white/80 backdrop-blur-xl">
+          <h1 className="font-semibold text-[#1D1D1F] text-lg">
             {navItems.find(item => item.href === pathname)?.label || "Dashboard"}
           </h1>
           <div className="flex items-center gap-3">
-            <button className="p-2 rounded-lg hover:bg-[oklch(0.97_0.01_195)] relative">
-              <Bell className="h-5 w-5 text-[oklch(0.3_0.01_240)]" />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full" />
+            <button className="p-2.5 rounded-xl hover:bg-[#F5F5F7] relative transition-colors">
+              <Bell className="h-5 w-5 text-[#6E6E73]" />
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#FF3B30] rounded-full" />
             </button>
-            <div className="w-9 h-9 rounded-full bg-[oklch(0.6_0.18_195)] flex items-center justify-center text-white font-medium text-sm">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3478F6] to-[#1D5FD8] flex items-center justify-center text-white font-semibold text-sm shadow-[0_4px_12px_rgba(52,120,246,0.3)]">
               JD
             </div>
           </div>

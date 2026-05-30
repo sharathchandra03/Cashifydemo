@@ -29,7 +29,7 @@ export default function LeadsPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.12_0.01_240)]">
+          <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#1D1D1F]">
             Lead Management
           </h1>
           <p className="text-sm text-muted-foreground">
@@ -39,7 +39,7 @@ export default function LeadsPage() {
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
-          className="px-4 py-2.5 bg-white border-2 border-border rounded-xl focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+          className="px-4 py-2.5 bg-white border-2 border-border rounded-xl focus:border-[#3478F6] focus:outline-none"
         >
           <option value="all">All Leads</option>
           <option value="new">New</option>
@@ -55,7 +55,7 @@ export default function LeadsPage() {
           const count = leadsData.filter(l => l.status === key).length;
           return (
             <div key={key} className="bg-white rounded-2xl border-2 border-border p-4">
-              <p className="text-2xl font-bold text-[oklch(0.12_0.01_240)]">{count}</p>
+              <p className="text-2xl font-bold text-[#1D1D1F]">{count}</p>
               <p className="text-xs text-muted-foreground">{config.label}</p>
             </div>
           );
@@ -64,15 +64,15 @@ export default function LeadsPage() {
 
       <div className="space-y-3">
         {filteredLeads.map((lead) => (
-          <div key={lead.id} className="bg-white rounded-2xl border-2 border-border p-5 hover:border-[oklch(0.6_0.18_195/0.5)] transition-colors">
+          <div key={lead.id} className="bg-white rounded-2xl border-2 border-border p-5 hover:border-[rgba(52,120,246,0.5)] transition-colors">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[oklch(0.97_0.01_195)] flex items-center justify-center shrink-0">
-                  <User className="h-6 w-6 text-[oklch(0.6_0.18_195)]" />
+                <div className="w-12 h-12 rounded-xl bg-[#F5F5F7] flex items-center justify-center shrink-0">
+                  <User className="h-6 w-6 text-[#3478F6]" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-[oklch(0.15_0.01_240)]">{lead.name}</h3>
+                    <h3 className="font-semibold text-[#1D1D1F]">{lead.name}</h3>
                     <span className={cn("px-2 py-0.5 rounded-full text-xs font-medium", statusConfig[lead.status].color)}>
                       {statusConfig[lead.status].label}
                     </span>
@@ -84,7 +84,7 @@ export default function LeadsPage() {
                   </div>
                   <p className="text-sm mt-2">
                     <span className="text-muted-foreground">Device: </span>
-                    <span className="font-medium text-[oklch(0.15_0.01_240)]">{lead.device}</span>
+                    <span className="font-medium text-[#1D1D1F]">{lead.device}</span>
                   </p>
                   {lead.notes && (
                     <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
@@ -102,11 +102,11 @@ export default function LeadsPage() {
                   </div>
                   <div className="text-right">
                     <p className="text-xs text-muted-foreground">Offered</p>
-                    <p className="font-medium text-[oklch(0.6_0.18_195)]">₹{lead.offered.toLocaleString()}</p>
+                    <p className="font-medium text-[#3478F6]">₹{lead.offered.toLocaleString()}</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <button className="px-3 py-1.5 text-sm bg-[oklch(0.6_0.18_195)] text-white rounded-lg hover:bg-[oklch(0.55_0.18_195)]">
+                  <button className="px-3 py-1.5 text-sm bg-[#3478F6] text-white rounded-lg hover:bg-[#1D5FD8]">
                     Update
                   </button>
                   <button className="p-1.5 rounded-lg hover:bg-red-50 text-red-500">

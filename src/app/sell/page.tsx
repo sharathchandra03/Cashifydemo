@@ -15,10 +15,10 @@ function CategoryStep({ onSelect }: { onSelect: (category: string) => void }) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <span className="text-xs font-semibold tracking-widest uppercase text-[oklch(0.6_0.18_195)] mb-2 block">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[#3478F6] mb-2 block">
           Step 1 of 4
         </span>
-        <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl text-[oklch(0.12_0.01_240)] mb-3">
+        <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl text-[#1D1D1F] mb-3">
           What do you want to sell?
         </h1>
         <p className="text-muted-foreground max-w-lg mx-auto">
@@ -31,7 +31,7 @@ function CategoryStep({ onSelect }: { onSelect: (category: string) => void }) {
           <button
             key={category.id}
             onClick={() => onSelect(category.id)}
-            className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white border-2 border-border hover:border-[oklch(0.6_0.18_195)] hover:shadow-lg transition-all duration-200"
+            className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white border-2 border-border hover:border-[#3478F6] hover:shadow-lg transition-all duration-200"
           >
             <div className="w-16 h-16 relative">
               <Image
@@ -42,9 +42,9 @@ function CategoryStep({ onSelect }: { onSelect: (category: string) => void }) {
               />
             </div>
             <div className="text-center">
-              <span className="font-semibold text-sm text-[oklch(0.15_0.01_240)]">{category.name}</span>
+              <span className="font-semibold text-sm text-[#1D1D1F]">{category.name}</span>
               {category.popular && (
-                <span className="block text-[10px] text-[oklch(0.6_0.18_195)] font-medium mt-1">Popular</span>
+                <span className="block text-[10px] text-[#3478F6] font-medium mt-1">Popular</span>
               )}
             </div>
           </button>
@@ -61,15 +61,15 @@ function BrandStep({ category, onSelect, onBack }: { category: string; onSelect:
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <button onClick={onBack} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[oklch(0.6_0.18_195)] mb-6">
+      <button onClick={onBack} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#3478F6] mb-6">
         <ArrowLeft className="h-4 w-4" /> Back to categories
       </button>
 
       <div className="text-center mb-12">
-        <span className="text-xs font-semibold tracking-widest uppercase text-[oklch(0.6_0.18_195)] mb-2 block">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[#3478F6] mb-2 block">
           Step 2 of 4
         </span>
-        <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl text-[oklch(0.12_0.01_240)] mb-3">
+        <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl text-[#1D1D1F] mb-3">
           Select your brand
         </h1>
         <p className="text-muted-foreground max-w-lg mx-auto">
@@ -82,7 +82,7 @@ function BrandStep({ category, onSelect, onBack }: { category: string; onSelect:
           <button
             key={brand.id}
             onClick={() => onSelect(brand.id)}
-            className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white border-2 border-border hover:border-[oklch(0.6_0.18_195)] hover:shadow-lg transition-all duration-200"
+            className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white border-2 border-border hover:border-[#3478F6] hover:shadow-lg transition-all duration-200"
           >
             <div className="w-12 h-12 relative grayscale group-hover:grayscale-0 transition-all">
               <Image
@@ -92,7 +92,7 @@ function BrandStep({ category, onSelect, onBack }: { category: string; onSelect:
                 className="object-contain"
               />
             </div>
-            <span className="font-semibold text-sm text-[oklch(0.15_0.01_240)]">{brand.name}</span>
+            <span className="font-semibold text-sm text-[#1D1D1F]">{brand.name}</span>
           </button>
         ))}
       </div>
@@ -108,15 +108,15 @@ function ModelStep({ category, brand, onSelect, onBack }: { category: string; br
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <button onClick={onBack} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[oklch(0.6_0.18_195)] mb-6">
+      <button onClick={onBack} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#3478F6] mb-6">
         <ArrowLeft className="h-4 w-4" /> Back to brands
       </button>
 
       <div className="text-center mb-12">
-        <span className="text-xs font-semibold tracking-widest uppercase text-[oklch(0.6_0.18_195)] mb-2 block">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[#3478F6] mb-2 block">
           Step 3 of 4
         </span>
-        <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl text-[oklch(0.12_0.01_240)] mb-3">
+        <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl text-[#1D1D1F] mb-3">
           Select your {brandName} model
         </h1>
         <p className="text-muted-foreground max-w-lg mx-auto">
@@ -126,7 +126,7 @@ function ModelStep({ category, brand, onSelect, onBack }: { category: string; br
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {models.map((model) => (
-          <div key={model.id} className="bg-white rounded-2xl border-2 border-border p-5 hover:border-[oklch(0.6_0.18_195)] transition-colors">
+          <div key={model.id} className="bg-white rounded-2xl border-2 border-border p-5 hover:border-[#3478F6] transition-colors">
             <div className="flex items-start gap-4 mb-4">
               <div className="w-20 h-24 relative bg-gradient-to-b from-slate-50 to-slate-100 rounded-xl overflow-hidden shrink-0">
                 <Image
@@ -137,8 +137,8 @@ function ModelStep({ category, brand, onSelect, onBack }: { category: string; br
                 />
               </div>
               <div>
-                <h3 className="font-semibold text-[oklch(0.15_0.01_240)]">{model.name}</h3>
-                <p className="text-sm text-[oklch(0.6_0.18_195)] font-bold mt-1">
+                <h3 className="font-semibold text-[#1D1D1F]">{model.name}</h3>
+                <p className="text-sm text-[#3478F6] font-bold mt-1">
                   Up to ₹{model.basePrice.toLocaleString()}
                 </p>
               </div>
@@ -154,8 +154,8 @@ function ModelStep({ category, brand, onSelect, onBack }: { category: string; br
                     className={cn(
                       "px-3 py-1.5 rounded-lg text-xs font-medium transition-colors",
                       selectedStorage[model.id] === storage
-                        ? "bg-[oklch(0.6_0.18_195)] text-white"
-                        : "bg-[oklch(0.97_0.01_195)] text-[oklch(0.3_0.01_240)] hover:bg-[oklch(0.95_0.02_195)]"
+                        ? "bg-[#3478F6] text-white"
+                        : "bg-[#F5F5F7] text-[#6E6E73] hover:bg-[rgba(52,120,246,0.08)]"
                     )}
                   >
                     {storage}
@@ -167,7 +167,7 @@ function ModelStep({ category, brand, onSelect, onBack }: { category: string; br
             <button
               onClick={() => onSelect(model.id, selectedStorage[model.id] || model.storage[0])}
               disabled={!selectedStorage[model.id]}
-              className="w-full py-2.5 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="w-full py-2.5 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               Select Model
             </button>
@@ -219,7 +219,7 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <button onClick={onBack} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[oklch(0.6_0.18_195)] mb-6">
+      <button onClick={onBack} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#3478F6] mb-6">
         <ArrowLeft className="h-4 w-4" /> Back to models
       </button>
 
@@ -227,12 +227,12 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
         {/* Left: Questions */}
         <div className="lg:col-span-3">
           <div className="mb-8">
-            <span className="text-xs font-semibold tracking-widest uppercase text-[oklch(0.6_0.18_195)] mb-2 block">
+            <span className="text-xs font-semibold tracking-widest uppercase text-[#3478F6] mb-2 block">
               Step 4 of 4 - Question {completed ? deviceQuestions.length : currentQuestion + 1} of {deviceQuestions.length}
             </span>
-            <div className="h-2 bg-[oklch(0.95_0.01_195)] rounded-full overflow-hidden">
+            <div className="h-2 bg-[#F5F5F7] rounded-full overflow-hidden">
               <div
-                className="h-full bg-[oklch(0.6_0.18_195)] transition-all duration-500"
+                className="h-full bg-[#3478F6] transition-all duration-500"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -240,7 +240,7 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
 
           {!completed ? (
             <div className="bg-white rounded-2xl border-2 border-border p-6 md:p-8">
-              <h2 className="font-[family-name:var(--font-display)] font-bold text-xl md:text-2xl text-[oklch(0.12_0.01_240)] mb-6">
+              <h2 className="font-[family-name:var(--font-display)] font-bold text-xl md:text-2xl text-[#1D1D1F] mb-6">
                 {deviceQuestions[currentQuestion].question}
               </h2>
 
@@ -249,9 +249,9 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
                   <button
                     key={option.id}
                     onClick={() => handleAnswer(option.id)}
-                    className="w-full flex items-center justify-between p-4 rounded-xl border-2 border-border hover:border-[oklch(0.6_0.18_195)] hover:bg-[oklch(0.98_0.01_195)] transition-all text-left group"
+                    className="w-full flex items-center justify-between p-4 rounded-xl border-2 border-border hover:border-[#3478F6] hover:bg-[#FBFBFD] transition-all text-left group"
                   >
-                    <span className="font-medium text-[oklch(0.2_0.01_240)]">{option.label}</span>
+                    <span className="font-medium text-[#1D1D1F]">{option.label}</span>
                     {option.deduction > 0 && (
                       <span className="text-xs text-amber-600 font-medium bg-amber-50 px-2 py-1 rounded">
                         -{option.deduction}%
@@ -262,7 +262,7 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
                         No deduction
                       </span>
                     )}
-                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[oklch(0.6_0.18_195)]" />
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-[#3478F6]" />
                   </button>
                 ))}
               </div>
@@ -272,7 +272,7 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
               <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="h-8 w-8 text-green-600" />
               </div>
-              <h2 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.12_0.01_240)] mb-2">
+              <h2 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#1D1D1F] mb-2">
                 Assessment Complete!
               </h2>
               <p className="text-muted-foreground mb-6">
@@ -280,7 +280,7 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
               </p>
               <Link
                 href="/sell/book"
-                className="inline-flex items-center gap-2 bg-[oklch(0.68_0.19_45)] text-white font-semibold px-8 py-3 rounded-xl hover:bg-[oklch(0.62_0.19_45)] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#0071E3] text-white font-semibold px-8 py-3 rounded-xl hover:bg-[#1D5FD8] transition-colors"
               >
                 Continue to Booking <ArrowRight className="h-4 w-4" />
               </Link>
@@ -290,7 +290,7 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
 
         {/* Right: Price Summary */}
         <div className="lg:col-span-2">
-          <div className="sticky top-24 bg-gradient-to-br from-[oklch(0.15_0.02_240)] to-[oklch(0.12_0.02_240)] rounded-2xl p-6 text-white">
+          <div className="sticky top-24 bg-gradient-to-br from-[#0F044A] to-[#1a0d5c] rounded-2xl p-6 text-white">
             <h3 className="text-sm font-medium text-white/60 mb-4">Price Summary</h3>
 
             <div className="mb-4">
@@ -314,7 +314,7 @@ function QuestionStep({ modelData, onComplete, onBack }: { modelData: { category
             <div className="border-t border-white/20 pt-4 mb-4">
               <div className="flex justify-between items-end">
                 <span className="text-sm text-white/70">Final Price</span>
-                <span className="font-[family-name:var(--font-display)] font-bold text-3xl text-[oklch(0.75_0.18_195)]">
+                <span className="font-[family-name:var(--font-display)] font-bold text-3xl text-[#3478F6]">
                   ₹{calculatePrice().finalPrice.toLocaleString()}
                 </span>
               </div>
@@ -372,7 +372,7 @@ export default function SellPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#F5F5F7]">
       <Navbar />
       <main className="flex-1">
         {step === "category" && <CategoryStep onSelect={handleCategorySelect} />}

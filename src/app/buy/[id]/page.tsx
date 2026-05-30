@@ -11,9 +11,9 @@ import { ChevronLeft, Heart, ShoppingCart, Share2, CheckCircle2, Shield, Truck, 
 import { cn } from "@/lib/utils";
 
 const productsData = [
-  { id: "1", name: "iPhone 14 Pro Max", storage: "256GB", color: "Deep Purple", price: 58999, originalPrice: 139900, grade: "A", images: ["https://s3ng.cashify.in/cashify/store/product/1e6b0a079b59479fa308605df283452e.png", "https://s3ng.cashify.in/cashify/store/product/2f7c1b168c0d456fa409716ef394856d.png"], specs: { display: "6.7\" Super Retina XDR", processor: "A16 Bionic", camera: "48MP Main + 12MP Ultra Wide", battery: "4323 mAh", os: "iOS 17" }, warranty: "12 Months", seller: "U2U Certified", rating: 4.8, reviews: 234 },
-  { id: "2", name: "Samsung S23 Ultra", storage: "512GB", color: "Phantom Black", price: 72999, originalPrice: 154999, grade: "A+", images: ["https://s3ng.cashify.in/cashify/store/product/3d8e2c279b1a567fb518927cd485967e.png"], specs: { display: "6.8\" Dynamic AMOLED 2X", processor: "Snapdragon 8 Gen 2", camera: "200MP Main + 12MP Periscope", battery: "5000 mAh", os: "Android 14" }, warranty: "12 Months", seller: "U2U Certified", rating: 4.7, reviews: 189 },
-  { id: "3", name: "Pixel 8 Pro", storage: "128GB", color: "Obsidian", price: 52999, originalPrice: 106999, grade: "A", images: ["https://s3ng.cashify.in/cashify/store/product/4f9f3d381c2b6789gc629138ef596078.png"], specs: { display: "6.7\" LTPO OLED", processor: "Google Tensor G3", camera: "50MP Main + 48MP Telephoto", battery: "5050 mAh", os: "Android 14" }, warranty: "12 Months", seller: "U2U Certified", rating: 4.6, reviews: 156 },
+  { id: "1", name: "iPhone 14 Pro Max", storage: "256GB", color: "Deep Purple", price: 58999, originalPrice: 139900, grade: "A", images: ["https://s3ng.cashify.in/cashify/store/product/1e6b0a079b59479fa308605df283452e.png", "https://s3ng.cashify.in/cashify/store/product/2f7c1b168c0d456fa409716ef394856d.png"], specs: { display: "6.7\" Super Retina XDR", processor: "A16 Bionic", camera: "48MP Main + 12MP Ultra Wide", battery: "4323 mAh", os: "iOS 17" }, warranty: "12 Months", seller: "MobiTrade Certified", rating: 4.8, reviews: 234 },
+  { id: "2", name: "Samsung S23 Ultra", storage: "512GB", color: "Phantom Black", price: 72999, originalPrice: 154999, grade: "A+", images: ["https://s3ng.cashify.in/cashify/store/product/3d8e2c279b1a567fb518927cd485967e.png"], specs: { display: "6.8\" Dynamic AMOLED 2X", processor: "Snapdragon 8 Gen 2", camera: "200MP Main + 12MP Periscope", battery: "5000 mAh", os: "Android 14" }, warranty: "12 Months", seller: "MobiTrade Certified", rating: 4.7, reviews: 189 },
+  { id: "3", name: "Pixel 8 Pro", storage: "128GB", color: "Obsidian", price: 52999, originalPrice: 106999, grade: "A", images: ["https://s3ng.cashify.in/cashify/store/product/4f9f3d381c2b6789gc629138ef596078.png"], specs: { display: "6.7\" LTPO OLED", processor: "Google Tensor G3", camera: "50MP Main + 48MP Telephoto", battery: "5050 mAh", os: "Android 14" }, warranty: "12 Months", seller: "MobiTrade Certified", rating: 4.6, reviews: 156 },
 ];
 
 export default function ProductDetailPage() {
@@ -38,12 +38,12 @@ export default function ProductDetailPage() {
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1">
         {/* Breadcrumb */}
         <div className="max-w-7xl mx-auto px-4 py-4">
-          <Link href="/buy" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[oklch(0.6_0.18_195)]">
+          <Link href="/buy" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[#3478F6]">
             <ChevronLeft className="h-4 w-4" /> Back to Buy
           </Link>
         </div>
@@ -83,7 +83,7 @@ export default function ProductDetailPage() {
                       onClick={() => setSelectedImage(i)}
                       className={cn(
                         "w-20 h-20 rounded-xl border-2 p-2 bg-white transition-colors",
-                        selectedImage === i ? "border-[oklch(0.6_0.18_195)]" : "border-border hover:border-gray-300"
+                        selectedImage === i ? "border-[#3478F6]" : "border-border hover:border-gray-300"
                       )}
                     >
                       <Image src={img} alt="" width={60} height={60} className="object-contain" />
@@ -96,7 +96,7 @@ export default function ProductDetailPage() {
             {/* Product Info */}
             <div className="space-y-6">
               <div>
-                <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl lg:text-3xl text-[oklch(0.12_0.01_240)]">
+                <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl lg:text-3xl text-[#1D1D1F]">
                   {product.name} {product.storage}
                 </h1>
                 <p className="text-muted-foreground mt-1">{product.color} • Sold by {product.seller}</p>
@@ -112,7 +112,7 @@ export default function ProductDetailPage() {
               {/* Price */}
               <div className="p-6 bg-white rounded-2xl border-2 border-border">
                 <div className="flex items-baseline gap-3">
-                  <span className="font-[family-name:var(--font-display)] font-bold text-4xl text-[oklch(0.6_0.18_195)]">
+                  <span className="font-[family-name:var(--font-display)] font-bold text-4xl text-[#3478F6]">
                     ₹{product.price.toLocaleString()}
                   </span>
                   <span className="text-lg text-muted-foreground line-through">
@@ -136,18 +136,18 @@ export default function ProductDetailPage() {
                     "flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-semibold transition-colors",
                     addedToCart
                       ? "bg-green-500 text-white"
-                      : "bg-[oklch(0.6_0.18_195)] text-white hover:bg-[oklch(0.55_0.18_195)]"
+                      : "bg-[#3478F6] text-white hover:bg-[#1D5FD8]"
                   )}
                 >
                   {addedToCart ? <><CheckCircle2 className="h-5 w-5" /> Added</> : <><ShoppingCart className="h-5 w-5" /> Add to Cart</>}
                 </button>
                 <Link
                   href="/cart"
-                  className="flex-1 flex items-center justify-center gap-2 py-4 bg-[oklch(0.68_0.19_45)] text-white rounded-xl font-semibold hover:bg-[oklch(0.62_0.19_45)] transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 py-4 bg-[#0071E3] text-white rounded-xl font-semibold hover:bg-[#1D5FD8] transition-colors"
                 >
                   Buy Now
                 </Link>
-                <button className="p-4 border-2 border-border rounded-xl hover:bg-[oklch(0.98_0.005_240)]">
+                <button className="p-4 border-2 border-border rounded-xl hover:bg-[#FBFBFD]">
                   <Share2 className="h-5 w-5" />
                 </button>
               </div>
@@ -159,8 +159,8 @@ export default function ProductDetailPage() {
                   { icon: RotateCcw, text: "7-Day Returns" },
                   { icon: Truck, text: "Free Shipping" },
                 ].map((badge) => (
-                  <div key={badge.text} className="flex flex-col items-center gap-2 p-3 bg-[oklch(0.98_0.005_240)] rounded-xl">
-                    <badge.icon className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+                  <div key={badge.text} className="flex flex-col items-center gap-2 p-3 bg-[#FBFBFD] rounded-xl">
+                    <badge.icon className="h-5 w-5 text-[#3478F6]" />
                     <span className="text-xs font-medium text-center">{badge.text}</span>
                   </div>
                 ))}
@@ -197,13 +197,13 @@ export default function ProductDetailPage() {
             <h2 className="font-[family-name:var(--font-display)] font-bold text-xl mb-6">Similar Products</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {productsData.filter(p => p.id !== product.id).slice(0, 4).map((p) => (
-                <Link key={p.id} href={`/buy/${p.id}`} className="bg-white rounded-2xl border-2 border-border p-4 hover:border-[oklch(0.6_0.18_195)] transition-colors">
-                  <div className="aspect-square bg-[oklch(0.98_0.005_240)] rounded-xl mb-3 flex items-center justify-center">
+                <Link key={p.id} href={`/buy/${p.id}`} className="bg-white rounded-2xl border-2 border-border p-4 hover:border-[#3478F6] transition-colors">
+                  <div className="aspect-square bg-[#FBFBFD] rounded-xl mb-3 flex items-center justify-center">
                     <Image src={p.images[0]} alt={p.name} width={120} height={120} className="object-contain" />
                   </div>
                   <h3 className="font-medium text-sm line-clamp-1">{p.name}</h3>
                   <p className="text-xs text-muted-foreground">{p.storage}</p>
-                  <p className="font-bold text-[oklch(0.6_0.18_195)] mt-1">₹{p.price.toLocaleString()}</p>
+                  <p className="font-bold text-[#3478F6] mt-1">₹{p.price.toLocaleString()}</p>
                 </Link>
               ))}
             </div>

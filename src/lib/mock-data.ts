@@ -1,4 +1,4 @@
-// Mock data for the U2U sell flow
+// Mock data for the MobiTrade sell flow
 
 export const sellCategories = [
   {

@@ -4,6 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* iFix Academy Design System */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -34,71 +35,135 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 40px;
+  --radius-pill: 999px;
 
   /* Marquee animations */
   --animate-marquee: marquee var(--duration, 40s) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration, 40s) linear
+    infinite;
 }
 
 :root {
-  /* U2U Brand Colors — teal primary, orange accent */
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.12 0.01 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.12 0.01 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.12 0.01 240);
-  --primary: oklch(0.6 0.18 195);       /* teal #00B4D8 */
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.005 240);
-  --secondary-foreground: oklch(0.2 0.01 240);
-  --muted: oklch(0.96 0.005 240);
-  --muted-foreground: oklch(0.52 0.01 240);
-  --accent: oklch(0.68 0.19 45);        /* orange #FF6B00 */
-  --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.577 0.245 27);
-  --border: oklch(0.91 0.005 240);
-  --input: oklch(0.91 0.005 240);
-  --ring: oklch(0.6 0.18 195);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.6 0.18 195);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.6 0.18 195);
+  /* iFix Academy Design System */
+  --background: #ffffff;
+  --foreground: #1d1d1f;
+  --card: #f5f5f7;
+  --card-foreground: #1d1d1f;
+  --popover: #ffffff;
+  --popover-foreground: #1d1d1f;
+  --primary: #3478f6;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1d5fd8;
+  --primary-tint: rgba(52, 120, 246, 0.1);
+  --secondary: #f5f5f7;
+  --secondary-foreground: #1d1d1f;
+  --muted: #fbfbfd;
+  --muted-foreground: #6e6e73;
+  --tertiary: #a1a1a6;
+  --accent: #0071e3;
+  --accent-foreground: #ffffff;
+  --destructive: #ff3b30;
+  --success: #34c759;
+  --navy: #0f044a;
+  --border: rgba(0, 0, 0, 0.09);
+  --border-hover: rgba(0, 0, 0, 0.2);
+  --input: rgba(0, 0, 0, 0.09);
+  --ring: #3478f6;
+  --surface: rgba(0, 0, 0, 0.025);
+  --radius: 14px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.12);
+
+  /* Easing */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1d1d1f;
+  --sidebar-primary: #3478f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5f5f7;
+  --sidebar-accent-foreground: #1d1d1f;
+  --sidebar-border: rgba(0, 0, 0, 0.09);
+  --sidebar-ring: #3478f6;
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% - var(--gap, 1rem))); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 1rem)));
+  }
 }
 
 @keyframes marquee-vertical {
-  from { transform: translateY(0); }
-  to { transform: translateY(calc(-100% - var(--gap, 1rem))); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap, 1rem)));
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(1deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
 }
 
 @keyframes float-delayed {
-  0%, 100% { transform: translateY(0px) rotate(-1deg); }
-  50% { transform: translateY(-16px) rotate(0deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(0deg);
+  }
 }
 
 @keyframes shine {
-  from { transform: translateX(-100%) skewX(-15deg); }
-  to { transform: translateX(200%) skewX(-15deg); }
+  from {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  to {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(52, 120, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(52, 120, 246, 0.5);
+  }
 }
 
 @layer base {
@@ -107,15 +172,91 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
   }
   html {
     scroll-behavior: smooth;
   }
-  /* All headings: Bricolage Grotesque variable at weight 500 */
-  h1, h2, h3, h4 {
-    font-family: var(--font-display), sans-serif;
-    font-weight: 500;
+  /* iFix Academy Typography - DM Sans */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1;
   }
+}
+
+/* Section Labels */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #3478f6;
+}
+
+/* Pill Button Base */
+.btn-pill {
+  border-radius: 999px;
+  transition: all 0.35s var(--ease-expo);
+}
+
+.btn-pill:hover {
+  box-shadow: 0 0 30px rgba(52, 120, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Glow Effect */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(52, 120, 246, 0.3);
+}
+
+.glow-blue-hover:hover {
+  box-shadow: 0 0 40px rgba(52, 120, 246, 0.5);
+}
+
+/* Reveal Animation */
+.reveal {
+  animation: reveal-up 0.6s var(--ease-expo) forwards;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.1s;
+}
+.reveal-delay-2 {
+  animation-delay: 0.2s;
+}
+.reveal-delay-3 {
+  animation-delay: 0.3s;
+}
+.reveal-delay-4 {
+  animation-delay: 0.4s;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Navy Background */
+.bg-navy {
+  background-color: #0f044a;
+}
+
+/* Primary Blue Background */
+.bg-primary-blue {
+  background-color: #3478f6;
+}
+
+/* Accent Tint Background */
+.bg-accent-tint {
+  background-color: rgba(52, 120, 246, 0.1);
 }
 
 /* Custom utilities */
@@ -129,18 +270,48 @@
   animation: shine 2s linear infinite;
 }
 
-/* Gradient mesh background */
+/* Subtle mesh background */
 .mesh-bg {
   background:
-    radial-gradient(ellipse 80% 60% at 20% 40%, oklch(0.6 0.18 195 / 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 60%, oklch(0.68 0.19 45 / 0.06) 0%, transparent 60%),
-    oklch(0.99 0 0);
+    radial-gradient(
+      ellipse 80% 60% at 20% 40%,
+      rgba(52, 120, 246, 0.06) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 80% 60%,
+      rgba(15, 4, 74, 0.04) 0%,
+      transparent 60%
+    ),
+    #ffffff;
 }
 
-.teal-gradient {
-  background: linear-gradient(135deg, oklch(0.6 0.18 195) 0%, oklch(0.55 0.16 210) 100%);
+/* Primary Blue Gradient */
+.blue-gradient {
+  background: linear-gradient(135deg, #3478f6 0%, #1d5fd8 100%);
 }
 
+/* Navy Gradient */
+.navy-gradient {
+  background: linear-gradient(135deg, #0f044a 0%, #1a0d5c 100%);
+}
+
+/* Dark Gradient - for sections with white text */
 .dark-gradient {
-  background: linear-gradient(135deg, oklch(0.12 0.03 240) 0%, oklch(0.17 0.04 240) 100%);
+  background: linear-gradient(135deg, #0f044a 0%, #1a0d5c 100%);
+}
+
+/* Teal Gradient - for app download section */
+.teal-gradient {
+  background: linear-gradient(135deg, #0f044a 0%, #1a3a6c 50%, #0f044a 100%);
+}
+
+/* Card Hover Shadow */
+.card-hover {
+  transition: all 0.35s var(--ease-expo);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }

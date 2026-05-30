@@ -17,7 +17,7 @@ const testimonials = [
     city: "Bangalore",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
     rating: 5,
-    text: "Bought a refurbished Samsung S22 from U2U. It looks and works exactly like new! Can't believe I saved ₹25,000. Will definitely buy again.",
+    text: "Bought a refurbished Samsung S22 from MobiTrade. It looks and works exactly like new! Can't believe I saved ₹25,000. Will definitely buy again.",
     device: "Bought Samsung S22",
     bg: "bg-teal-50",
   },
@@ -35,7 +35,7 @@ const testimonials = [
     city: "Chennai",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop",
     rating: 4,
-    text: "Sold my old MacBook Pro for a great price. The pickup was prompt and the team was very professional. Highly recommend U2U!",
+    text: "Sold my old MacBook Pro for a great price. The pickup was prompt and the team was very professional. Highly recommend MobiTrade!",
     device: "Sold MacBook Pro",
     bg: "bg-purple-50",
   },
@@ -43,14 +43,14 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-12 md:py-16 bg-[oklch(0.98_0.005_240)]">
+    <section className="py-12 md:py-16 bg-[#FBFBFD]">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
-          <span className="text-xs font-semibold tracking-widest uppercase text-[oklch(0.6_0.18_195)] mb-2 block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-[#3478F6] mb-2 block">
             Customer Stories
           </span>
-          <h2 className="font-[family-name:var(--font-display)] font-bold text-2xl md:text-4xl text-[oklch(0.12_0.01_240)]">
+          <h2 className="font-[family-name:var(--font-display)] font-bold text-2xl md:text-4xl text-[#1D1D1F]">
             What Our Customers Say
           </h2>
           <p className="text-muted-foreground mt-2 text-sm max-w-lg mx-auto">
@@ -77,12 +77,12 @@ export default function Testimonials() {
                 </div>
 
                 {/* Quote */}
-                <p className="text-sm text-[oklch(0.3_0.01_240)] leading-relaxed mb-4">
+                <p className="text-sm text-[#6E6E73] leading-relaxed mb-4">
                   &ldquo;{t.text}&rdquo;
                 </p>
 
                 {/* Device tag */}
-                <span className="inline-block text-[10px] font-semibold bg-white/70 text-[oklch(0.6_0.18_195)] px-2 py-1 rounded-full mb-4">
+                <span className="inline-block text-[10px] font-semibold bg-white/70 text-[#3478F6] px-2 py-1 rounded-full mb-4">
                   {t.device}
                 </span>
 
@@ -92,7 +92,7 @@ export default function Testimonials() {
                     <Image src={t.avatar} alt={t.name} fill className="object-cover" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-[oklch(0.15_0.01_240)]">{t.name}</p>
+                    <p className="text-xs font-semibold text-[#1D1D1F]">{t.name}</p>
                     <p className="text-[10px] text-muted-foreground">{t.city}</p>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ export default function Testimonials() {
           ].map((p) => (
             <div key={p.platform} className="flex items-center gap-3">
               <div className="text-center">
-                <div className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.6_0.18_195)]">
+                <div className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#3478F6]">
                   {p.rating}
                 </div>
                 <div className="flex gap-0.5 justify-center my-1">

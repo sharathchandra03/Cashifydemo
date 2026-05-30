@@ -24,7 +24,7 @@ export default function PurchasesPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.12_0.01_240)]">
+        <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#1D1D1F]">
           My Purchases
         </h1>
         <p className="text-sm text-muted-foreground">
@@ -34,11 +34,11 @@ export default function PurchasesPage() {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-white rounded-2xl border-2 border-border p-4">
-          <p className="text-2xl font-bold text-[oklch(0.12_0.01_240)]">{purchasesData.length}</p>
+          <p className="text-2xl font-bold text-[#1D1D1F]">{purchasesData.length}</p>
           <p className="text-xs text-muted-foreground">Total Purchases</p>
         </div>
         <div className="bg-white rounded-2xl border-2 border-border p-4">
-          <p className="text-2xl font-bold text-[oklch(0.6_0.18_195)]">₹{(totalPurchases / 1000).toFixed(0)}K</p>
+          <p className="text-2xl font-bold text-[#3478F6]">₹{(totalPurchases / 1000).toFixed(0)}K</p>
           <p className="text-xs text-muted-foreground">Total Value</p>
         </div>
         <div className="bg-white rounded-2xl border-2 border-border p-4">
@@ -54,7 +54,7 @@ export default function PurchasesPage() {
       <div className="bg-white rounded-2xl border-2 border-border overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-[oklch(0.98_0.005_240)]">
+            <thead className="bg-[#FBFBFD]">
               <tr className="text-left text-xs font-medium text-muted-foreground">
                 <th className="px-4 py-3">Purchase ID</th>
                 <th className="px-4 py-3">Device</th>
@@ -68,11 +68,11 @@ export default function PurchasesPage() {
               {purchasesData.map((purchase) => {
                 const StatusIcon = statusConfig[purchase.status].icon;
                 return (
-                  <tr key={purchase.id} className="border-t border-border hover:bg-[oklch(0.98_0.005_240)]">
+                  <tr key={purchase.id} className="border-t border-border hover:bg-[#FBFBFD]">
                     <td className="px-4 py-3 font-medium">{purchase.id}</td>
                     <td className="px-4 py-3">{purchase.device}</td>
                     <td className="px-4 py-3 text-muted-foreground">{purchase.vendor}</td>
-                    <td className="px-4 py-3 font-medium text-[oklch(0.6_0.18_195)]">₹{purchase.price.toLocaleString()}</td>
+                    <td className="px-4 py-3 font-medium text-[#3478F6]">₹{purchase.price.toLocaleString()}</td>
                     <td className="px-4 py-3">
                       <span className={cn("inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium", statusConfig[purchase.status].color)}>
                         <StatusIcon className="h-3 w-3" />

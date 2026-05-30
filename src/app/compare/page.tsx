@@ -39,7 +39,7 @@ export default function ComparePage() {
 
   if (devices.length < 2) {
     return (
-      <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+      <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
         <Navbar />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
@@ -52,7 +52,7 @@ export default function ComparePage() {
                   className={cn(
                     "p-4 rounded-xl border-2 transition-colors",
                     selectedDevices.includes(d.id)
-                      ? "border-[oklch(0.6_0.18_195)] bg-[oklch(0.97_0.01_195)]"
+                      ? "border-[#3478F6] bg-[#F5F5F7]"
                       : "border-border hover:border-gray-300"
                   )}
                 >
@@ -69,13 +69,13 @@ export default function ComparePage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1 py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl">Compare Devices</h1>
-            <Link href="/buy" className="text-sm text-[oklch(0.6_0.18_195)] hover:underline">
+            <Link href="/buy" className="text-sm text-[#3478F6] hover:underline">
               Browse more devices
             </Link>
           </div>
@@ -89,7 +89,7 @@ export default function ComparePage() {
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-xl border-2 transition-colors",
                   selectedDevices.includes(d.id)
-                    ? "border-[oklch(0.6_0.18_195)] bg-[oklch(0.97_0.01_195)]"
+                    ? "border-[#3478F6] bg-[#F5F5F7]"
                     : "border-border hover:border-gray-300"
                 )}
               >
@@ -99,7 +99,7 @@ export default function ComparePage() {
               </button>
             ))}
             {selectedDevices.length < 3 && (
-              <button className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-dashed border-gray-300 text-muted-foreground hover:border-[oklch(0.6_0.18_195)] hover:text-[oklch(0.6_0.18_195)]">
+              <button className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-dashed border-gray-300 text-muted-foreground hover:border-[#3478F6] hover:text-[#3478F6]">
                 <Plus className="h-4 w-4" /> Add Device
               </button>
             )}
@@ -109,18 +109,18 @@ export default function ComparePage() {
           <div className="bg-white rounded-2xl border-2 border-border overflow-hidden">
             {/* Header Row */}
             <div className="grid border-b border-border" style={{ gridTemplateColumns: `200px repeat(${devices.length}, 1fr)` }}>
-              <div className="p-4 bg-[oklch(0.98_0.005_240)] font-medium">Device</div>
+              <div className="p-4 bg-[#FBFBFD] font-medium">Device</div>
               {devices.map((d) => (
                 <div key={d.id} className="p-4 text-center border-l border-border">
-                  <div className="w-24 h-24 mx-auto mb-3 bg-[oklch(0.98_0.005_240)] rounded-xl flex items-center justify-center">
+                  <div className="w-24 h-24 mx-auto mb-3 bg-[#FBFBFD] rounded-xl flex items-center justify-center">
                     <Image src={d.image} alt={d.name} width={80} height={80} className="object-contain" />
                   </div>
                   <h3 className="font-semibold">{d.name}</h3>
                   <p className="text-sm text-muted-foreground">{d.brand}</p>
-                  <p className="font-bold text-[oklch(0.6_0.18_195)] text-lg mt-1">₹{d.price.toLocaleString()}</p>
+                  <p className="font-bold text-[#3478F6] text-lg mt-1">₹{d.price.toLocaleString()}</p>
                   <Link
                     href={`/buy/${d.id}`}
-                    className="inline-flex items-center gap-1 mt-2 text-sm text-[oklch(0.6_0.18_195)] hover:underline"
+                    className="inline-flex items-center gap-1 mt-2 text-sm text-[#3478F6] hover:underline"
                   >
                     View <ArrowRight className="h-3 w-3" />
                   </Link>
@@ -131,7 +131,7 @@ export default function ComparePage() {
             {/* Specs Rows */}
             {Object.entries(specLabels).map(([key, label]) => (
               <div key={key} className="grid border-b border-border" style={{ gridTemplateColumns: `200px repeat(${devices.length}, 1fr)` }}>
-                <div className="p-4 bg-[oklch(0.98_0.005_240)] font-medium text-sm">{label}</div>
+                <div className="p-4 bg-[#FBFBFD] font-medium text-sm">{label}</div>
                 {devices.map((d) => (
                   <div key={d.id} className="p-4 text-center border-l border-border text-sm">
                     {d.specs[key as keyof typeof d.specs]}
@@ -142,7 +142,7 @@ export default function ComparePage() {
 
             {/* Pros */}
             <div className="grid border-b border-border" style={{ gridTemplateColumns: `200px repeat(${devices.length}, 1fr)` }}>
-              <div className="p-4 bg-[oklch(0.98_0.005_240)] font-medium text-sm">Pros</div>
+              <div className="p-4 bg-[#FBFBFD] font-medium text-sm">Pros</div>
               {devices.map((d) => (
                 <div key={d.id} className="p-4 border-l border-border">
                   <ul className="space-y-1">
@@ -158,7 +158,7 @@ export default function ComparePage() {
 
             {/* Cons */}
             <div className="grid border-b border-border" style={{ gridTemplateColumns: `200px repeat(${devices.length}, 1fr)` }}>
-              <div className="p-4 bg-[oklch(0.98_0.005_240)] font-medium text-sm">Cons</div>
+              <div className="p-4 bg-[#FBFBFD] font-medium text-sm">Cons</div>
               {devices.map((d) => (
                 <div key={d.id} className="p-4 border-l border-border">
                   <ul className="space-y-1">
@@ -174,12 +174,12 @@ export default function ComparePage() {
 
             {/* Action Row */}
             <div className="grid" style={{ gridTemplateColumns: `200px repeat(${devices.length}, 1fr)` }}>
-              <div className="p-4 bg-[oklch(0.98_0.005_240)] font-medium text-sm">Action</div>
+              <div className="p-4 bg-[#FBFBFD] font-medium text-sm">Action</div>
               {devices.map((d) => (
                 <div key={d.id} className="p-4 border-l border-border">
                   <Link
                     href={`/buy/${d.id}`}
-                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)]"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8]"
                   >
                     <ShoppingCart className="h-4 w-4" /> Buy Now
                   </Link>
@@ -191,7 +191,7 @@ export default function ComparePage() {
           {/* Summary Cards */}
           <div className="grid md:grid-cols-3 gap-4 mt-8">
             {devices.map((d) => (
-              <div key={d.id} className="bg-gradient-to-br from-[oklch(0.97_0.01_195)] to-white rounded-2xl border-2 border-border p-4">
+              <div key={d.id} className="bg-gradient-to-br from-[#F5F5F7] to-white rounded-2xl border-2 border-border p-4">
                 <div className="flex items-center gap-3 mb-3">
                   <Image src={d.image} alt={d.name} width={40} height={40} className="object-contain" />
                   <div>
@@ -199,7 +199,7 @@ export default function ComparePage() {
                     <p className="text-xs text-muted-foreground">Best for: {d.pros[0]}</p>
                   </div>
                 </div>
-                <Link href={`/buy/${d.id}`} className="text-sm text-[oklch(0.6_0.18_195)] font-medium hover:underline">
+                <Link href={`/buy/${d.id}`} className="text-sm text-[#3478F6] font-medium hover:underline">
                   View Details →
                 </Link>
               </div>

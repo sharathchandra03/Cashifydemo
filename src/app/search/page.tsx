@@ -52,7 +52,7 @@ function SearchContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1">
         {/* Search Header */}
@@ -70,7 +70,7 @@ function SearchContent() {
                   }}
                   onFocus={() => setShowSuggestions(true)}
                   placeholder="Search for phones, laptops, brands..."
-                  className="w-full pl-12 pr-12 py-4 text-lg rounded-2xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                  className="w-full pl-12 pr-12 py-4 text-lg rounded-2xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                 />
                 {query && (
                   <button
@@ -97,7 +97,7 @@ function SearchContent() {
                           key={s.term}
                           type="button"
                           onClick={() => { setQuery(s.term); setShowSuggestions(false); setHasSearched(true); }}
-                          className="w-full px-4 py-3 flex items-center justify-between hover:bg-[oklch(0.98_0.005_240)]"
+                          className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#FBFBFD]"
                         >
                           <div className="flex items-center gap-3">
                             <Search className="h-4 w-4 text-muted-foreground" />
@@ -133,7 +133,7 @@ function SearchContent() {
                         <button
                           key={term}
                           onClick={() => { setQuery(term); setHasSearched(true); }}
-                          className="px-3 py-1.5 bg-[oklch(0.98_0.005_240)] rounded-full text-sm hover:bg-[oklch(0.95_0.01_195)]"
+                          className="px-3 py-1.5 bg-[#FBFBFD] rounded-full text-sm hover:bg-[#F5F5F7]"
                         >
                           {term}
                         </button>
@@ -150,7 +150,7 @@ function SearchContent() {
                       <button
                         key={s.term}
                         onClick={() => { setQuery(s.term); setHasSearched(true); }}
-                        className="px-3 py-1.5 bg-[oklch(0.97_0.02_50)] rounded-full text-sm hover:bg-[oklch(0.95_0.03_60)]"
+                        className="px-3 py-1.5 bg-[#FFF9F5] rounded-full text-sm hover:bg-[#FFF5F0]"
                       >
                         {s.term}
                       </button>
@@ -180,9 +180,9 @@ function SearchContent() {
                   <Link
                     key={product.id}
                     href={`/buy/${product.id}`}
-                    className="bg-white rounded-2xl border-2 border-border p-4 hover:border-[oklch(0.6_0.18_195)] transition-colors"
+                    className="bg-white rounded-2xl border-2 border-border p-4 hover:border-[#3478F6] transition-colors"
                   >
-                    <div className="aspect-square bg-[oklch(0.98_0.005_240)] rounded-xl mb-4 flex items-center justify-center relative">
+                    <div className="aspect-square bg-[#FBFBFD] rounded-xl mb-4 flex items-center justify-center relative">
                       <Image src={product.image} alt={product.name} width={150} height={150} className="object-contain" />
                       <span className="absolute top-2 left-2 px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs font-medium">
                         Grade {product.grade}
@@ -195,7 +195,7 @@ function SearchContent() {
                       <span className="text-sm font-medium">{product.rating}</span>
                     </div>
                     <div className="flex items-baseline gap-2 mt-3">
-                      <span className="font-bold text-xl text-[oklch(0.6_0.18_195)]">₹{product.price.toLocaleString()}</span>
+                      <span className="font-bold text-xl text-[#3478F6]">₹{product.price.toLocaleString()}</span>
                       <span className="text-sm text-muted-foreground line-through">₹{product.originalPrice.toLocaleString()}</span>
                     </div>
                   </Link>
@@ -206,7 +206,7 @@ function SearchContent() {
                 <p className="text-muted-foreground">No results found for &quot;{query}&quot;</p>
                 <button
                   onClick={() => { setQuery(""); setHasSearched(false); }}
-                  className="mt-4 text-[oklch(0.6_0.18_195)] font-medium hover:underline"
+                  className="mt-4 text-[#3478F6] font-medium hover:underline"
                 >
                   Clear search
                 </button>
@@ -233,7 +233,7 @@ function SearchContent() {
                 <Link
                   key={cat.name}
                   href={cat.href}
-                  className="flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-border hover:border-[oklch(0.6_0.18_195)] transition-colors"
+                  className="flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-border hover:border-[#3478F6] transition-colors"
                 >
                   <span className="text-2xl">{cat.icon}</span>
                   <span className="font-medium">{cat.name}</span>

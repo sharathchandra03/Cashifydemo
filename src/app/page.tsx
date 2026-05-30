@@ -211,7 +211,7 @@ export default function HomePage() {
         {/* 3. How Selling Works */}
         <HowItWorks />
 
-        {/* 4. Buy Refurbished Phones — product grid */}
+        {/* 4. Buy Refurbished Phones - product grid */}
         <ProductSection
           title="Buy Refurbished Phones"
           subtitle="Certified pre-owned · Grade A quality · Best prices guaranteed"
@@ -220,7 +220,7 @@ export default function HomePage() {
           bgColor="bg-white"
         />
 
-        {/* 5. 🎯 Floating Phone Showcase — strategic visual attraction */}
+        {/* 5. 🎯 Floating Phone Showcase - strategic visual attraction */}
         <FloatingPhones />
 
         {/* 6. Refurbished Laptops */}
@@ -229,7 +229,7 @@ export default function HomePage() {
           subtitle="Work smarter, spend less · All grades available"
           products={refurbishedLaptops}
           viewAllHref="/buy/laptops"
-          bgColor="bg-[oklch(0.98_0.005_240)]"
+          bgColor="bg-[#FBFBFD]"
         />
 
         {/* 7. Trust Guarantees + Brand Logos */}

@@ -42,7 +42,7 @@ export default function TeamSection() {
     <section className="relative w-full overflow-hidden bg-white py-14 md:py-20">
       {/* Decorative SVG */}
       <svg
-        className="absolute right-0 bottom-0 text-[oklch(0.6_0.18_195/0.06)]"
+        className="absolute right-0 bottom-0 text-[rgba(52,120,246,0.06)]"
         fill="none"
         height="154"
         viewBox="0 0 460 154"
@@ -61,16 +61,16 @@ export default function TeamSection() {
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header */}
         <div className="mx-auto mb-12 flex max-w-3xl flex-col items-center px-4 text-center">
-          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[oklch(0.6_0.18_195)] text-white shadow-lg shadow-[oklch(0.6_0.18_195/0.3)]">
+          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#3478F6] text-white shadow-lg shadow-[rgba(52,120,246,0.3)]">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
               <path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
           </div>
-          <span className="text-xs font-semibold tracking-widest uppercase text-[oklch(0.6_0.18_195)] mb-2">
-            The People Behind U2U
+          <span className="text-xs font-semibold tracking-widest uppercase text-[#3478F6] mb-2">
+            The People Behind MobiTrade
           </span>
-          <h2 className="font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-5xl text-[oklch(0.12_0.01_240)] mb-4">
+          <h2 className="font-[family-name:var(--font-display)] font-extrabold text-3xl md:text-5xl text-[#1D1D1F] mb-4">
             Meet Our Team
           </h2>
           <p className="text-muted-foreground max-w-xl">
@@ -94,7 +94,7 @@ export default function TeamSection() {
                     src={member.image}
                   />
                   <div className="absolute bottom-0 w-full rounded-b-2xl bg-white/85 backdrop-blur-sm p-3">
-                    <h3 className="font-semibold text-[oklch(0.12_0.01_240)] text-sm">{member.name}</h3>
+                    <h3 className="font-semibold text-[#1D1D1F] text-sm">{member.name}</h3>
                     <p className="text-muted-foreground text-xs mt-0.5">{member.role}</p>
                   </div>
                 </div>
@@ -106,13 +106,13 @@ export default function TeamSection() {
         {/* Testimonial */}
         <div className="mx-auto mt-16 max-w-2xl px-4 text-center">
           <div className="flex justify-center mb-4">
-            <Quote className="h-8 w-8 text-[oklch(0.6_0.18_195/0.3)]" />
+            <Quote className="h-8 w-8 text-[rgba(52,120,246,0.3)]" />
           </div>
-          <p className="font-[family-name:var(--font-display)] font-medium text-lg md:text-xl text-[oklch(0.2_0.01_240)] leading-relaxed mb-6">
-            &ldquo;U2U changed how I think about upgrading my phone. I got ₹42,000 for my old device in under 24 hours — zero hassle.&rdquo;
+          <p className="font-[family-name:var(--font-display)] font-medium text-lg md:text-xl text-[#1D1D1F] leading-relaxed mb-6">
+            &ldquo;MobiTrade changed how I think about upgrading my phone. I got ₹42,000 for my old device in under 24 hours - zero hassle.&rdquo;
           </p>
           <div className="flex flex-col items-center gap-2">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-[oklch(0.6_0.18_195/0.3)]">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-[rgba(52,120,246,0.3)]">
               <Image
                 alt="Reviewer"
                 className="h-full w-full object-cover"
@@ -121,7 +121,7 @@ export default function TeamSection() {
               />
             </div>
             <div>
-              <p className="font-semibold text-sm text-[oklch(0.15_0.01_240)]">Pritha Banerjee</p>
+              <p className="font-semibold text-sm text-[#1D1D1F]">Pritha Banerjee</p>
               <p className="text-xs text-muted-foreground">Software Engineer · Mumbai</p>
             </div>
           </div>

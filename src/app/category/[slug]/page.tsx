@@ -24,12 +24,12 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
   const Icon = category.icon;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1">
         {/* Hero */}
-        <div className="bg-gradient-to-br from-[oklch(0.15_0.02_240)] to-[oklch(0.12_0.02_240)] py-16 px-4 text-center text-white">
-          <div className="w-16 h-16 rounded-2xl bg-[oklch(0.6_0.18_195)] flex items-center justify-center mx-auto mb-6">
+        <div className="bg-gradient-to-br from-[#0F044A] to-[#1a0d5c] py-16 px-4 text-center text-white">
+          <div className="w-16 h-16 rounded-2xl bg-[#3478F6] flex items-center justify-center mx-auto mb-6">
             <Icon className="h-8 w-8 text-white" />
           </div>
           <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl mb-4">
@@ -41,7 +41,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/buy"
-              className="inline-flex items-center gap-2 bg-[oklch(0.68_0.19_45)] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[oklch(0.62_0.19_45)] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#0071E3] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[#1D5FD8] transition-colors"
             >
               Buy {category.name} <ArrowRight className="h-4 w-4" />
             </Link>
@@ -70,13 +70,13 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="flex items-center justify-between p-4 bg-white rounded-xl border-2 border-border hover:border-[oklch(0.6_0.18_195)] transition-colors"
+                  className="flex items-center justify-between p-4 bg-white rounded-xl border-2 border-border hover:border-[#3478F6] transition-colors"
                 >
                   <div>
-                    <p className="font-medium text-[oklch(0.15_0.01_240)]">{link.label}</p>
+                    <p className="font-medium text-[#1D1D1F]">{link.label}</p>
                     <p className="text-sm text-muted-foreground">{link.desc}</p>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+                  <ArrowRight className="h-5 w-5 text-[#3478F6]" />
                 </Link>
               ))}
             </div>
@@ -98,9 +98,9 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
                     <Link
                       key={slug}
                       href={`/category/${slug}`}
-                      className="flex items-center gap-2 px-4 py-3 bg-[oklch(0.98_0.005_240)] rounded-xl hover:bg-[oklch(0.95_0.01_195)] transition-colors"
+                      className="flex items-center gap-2 px-4 py-3 bg-[#FBFBFD] rounded-xl hover:bg-[#F5F5F7] transition-colors"
                     >
-                      <CatIcon className="h-4 w-4 text-[oklch(0.6_0.18_195)]" />
+                      <CatIcon className="h-4 w-4 text-[#3478F6]" />
                       <span className="font-medium text-sm">{data.name}</span>
                     </Link>
                   );

@@ -12,7 +12,7 @@ export default function TrackOrderPage() {
 
   // Mock order data
   const mockOrder = {
-    id: "U2U-A7X9K2",
+    id: "MBT-A7X9K2",
     status: "in_transit",
     device: "iPhone 14 Pro Max 256GB",
     type: "sell",
@@ -39,7 +39,7 @@ export default function TrackOrderPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1 py-12 px-4">
         <div className="max-w-3xl mx-auto">
@@ -54,15 +54,15 @@ export default function TrackOrderPage() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <input
                   type="text"
-                  placeholder="Enter Order ID (e.g., U2U-A7X9K2)"
+                  placeholder="Enter Order ID (e.g., MBT-A7X9K2)"
                   value={orderId}
                   onChange={(e) => setOrderId(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                 />
               </div>
               <button
                 onClick={handleSearch}
-                className="px-6 py-3 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)] transition-colors"
+                className="px-6 py-3 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8] transition-colors"
               >
                 Track
               </button>
@@ -85,7 +85,7 @@ export default function TrackOrderPage() {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4 p-4 bg-[oklch(0.98_0.005_240)] rounded-xl">
+                <div className="grid grid-cols-3 gap-4 p-4 bg-[#FBFBFD] rounded-xl">
                   <div>
                     <p className="text-xs text-muted-foreground mb-1">Pickup Date</p>
                     <p className="font-medium">{mockOrder.pickupDate}</p>
@@ -96,14 +96,14 @@ export default function TrackOrderPage() {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground mb-1">Expected Amount</p>
-                    <p className="font-medium text-[oklch(0.6_0.18_195)]">₹{mockOrder.amount.toLocaleString()}</p>
+                    <p className="font-medium text-[#3478F6]">₹{mockOrder.amount.toLocaleString()}</p>
                   </div>
                 </div>
 
                 {/* Agent Info */}
-                <div className="mt-6 p-4 bg-[oklch(0.97_0.02_50)] rounded-xl border border-[oklch(0.68_0.19_45/0.3)]">
+                <div className="mt-6 p-4 bg-[#FFF9F5] rounded-xl border border-[rgba(0,113,227,0.3)]">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[oklch(0.6_0.18_195)] flex items-center justify-center text-white">
+                    <div className="w-10 h-10 rounded-full bg-[#3478F6] flex items-center justify-center text-white">
                       <Truck className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
@@ -112,7 +112,7 @@ export default function TrackOrderPage() {
                         <MapPin className="h-3 w-3" /> ETA: {mockOrder.agent.eta}
                       </p>
                     </div>
-                    <a href={`tel:${mockOrder.agent.phone}`} className="px-3 py-1.5 bg-white rounded-lg text-sm font-medium text-[oklch(0.6_0.18_195)] hover:bg-[oklch(0.98_0.005_240)]">
+                    <a href={`tel:${mockOrder.agent.phone}`} className="px-3 py-1.5 bg-white rounded-lg text-sm font-medium text-[#3478F6] hover:bg-[#FBFBFD]">
                       Call
                     </a>
                   </div>
@@ -128,7 +128,7 @@ export default function TrackOrderPage() {
                       <div className="flex flex-col items-center">
                         <div className={cn(
                           "w-8 h-8 rounded-full flex items-center justify-center",
-                          step.completed ? "bg-green-500 text-white" : step.current ? "bg-[oklch(0.6_0.18_195)] text-white" : "bg-gray-100 text-gray-400"
+                          step.completed ? "bg-green-500 text-white" : step.current ? "bg-[#3478F6] text-white" : "bg-gray-100 text-gray-400"
                         )}>
                           {step.completed ? <CheckCircle2 className="h-4 w-4" /> : step.current ? <Clock className="h-4 w-4" /> : <div className="w-2 h-2 rounded-full bg-gray-300" />}
                         </div>
@@ -142,7 +142,7 @@ export default function TrackOrderPage() {
                       <div className="pb-8">
                         <p className={cn(
                           "font-medium",
-                          step.completed || step.current ? "text-[oklch(0.15_0.01_240)]" : "text-muted-foreground"
+                          step.completed || step.current ? "text-[#1D1D1F]" : "text-muted-foreground"
                         )}>
                           {step.status}
                         </p>

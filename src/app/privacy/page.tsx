@@ -3,7 +3,7 @@ import Footer from "@/components/shared/Footer";
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1 py-12 px-4">
         <div className="max-w-3xl mx-auto">
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
               <h2 className="font-semibold text-xl mb-4">6. Contact Us</h2>
               <p className="text-muted-foreground">
                 If you have any questions about this Privacy Policy, please contact us at 
-                privacy@u2u.com or through our Help Center.
+                privacy@mobitrade.com or through our Help Center.
               </p>
             </section>
           </div>

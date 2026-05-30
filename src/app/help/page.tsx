@@ -21,11 +21,11 @@ const popularQuestions = [
 
 export default function HelpPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1">
         {/* Hero */}
-        <div className="bg-gradient-to-br from-[oklch(0.15_0.02_240)] to-[oklch(0.12_0.02_240)] py-16 px-4 text-center text-white">
+        <div className="bg-gradient-to-br from-[#0F044A] to-[#1a0d5c] py-16 px-4 text-center text-white">
           <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl mb-4">
             How Can We Help?
           </h1>
@@ -35,7 +35,7 @@ export default function HelpPage() {
             <input
               type="text"
               placeholder="Search for answers..."
-              className="w-full pl-12 pr-4 py-4 rounded-2xl text-[oklch(0.15_0.01_240)] focus:outline-none"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl text-[#1D1D1F] focus:outline-none"
             />
           </div>
         </div>
@@ -49,10 +49,10 @@ export default function HelpPage() {
                 <Link
                   key={cat.title}
                   href="#"
-                  className="flex items-center gap-4 p-4 bg-white rounded-2xl border-2 border-border hover:border-[oklch(0.6_0.18_195)] transition-colors"
+                  className="flex items-center gap-4 p-4 bg-white rounded-2xl border-2 border-border hover:border-[#3478F6] transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[oklch(0.97_0.01_195)] flex items-center justify-center">
-                    <cat.icon className="h-6 w-6 text-[oklch(0.6_0.18_195)]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#F5F5F7] flex items-center justify-center">
+                    <cat.icon className="h-6 w-6 text-[#3478F6]" />
                   </div>
                   <div>
                     <p className="font-semibold">{cat.title}</p>
@@ -73,10 +73,10 @@ export default function HelpPage() {
                 <Link
                   key={q}
                   href="#"
-                  className="flex items-center justify-between p-4 bg-[oklch(0.98_0.005_240)] rounded-xl hover:bg-[oklch(0.95_0.01_195)] transition-colors"
+                  className="flex items-center justify-between p-4 bg-[#FBFBFD] rounded-xl hover:bg-[#F5F5F7] transition-colors"
                 >
                   <span>{q}</span>
-                  <span className="text-[oklch(0.6_0.18_195)]">→</span>
+                  <span className="text-[#3478F6]">→</span>
                 </Link>
               ))}
             </div>
@@ -89,24 +89,24 @@ export default function HelpPage() {
             <h2 className="font-[family-name:var(--font-display)] font-bold text-xl mb-6 text-center">Still Need Help?</h2>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="p-6 bg-white rounded-2xl border-2 border-border text-center">
-                <div className="w-12 h-12 rounded-full bg-[oklch(0.97_0.01_195)] flex items-center justify-center mx-auto mb-4">
-                  <Phone className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+                <div className="w-12 h-12 rounded-full bg-[#F5F5F7] flex items-center justify-center mx-auto mb-4">
+                  <Phone className="h-5 w-5 text-[#3478F6]" />
                 </div>
                 <p className="font-semibold mb-1">Call Us</p>
                 <p className="text-sm text-muted-foreground">+91 98765 43210</p>
                 <p className="text-xs text-muted-foreground mt-1">Mon-Sat, 9AM-8PM</p>
               </div>
               <div className="p-6 bg-white rounded-2xl border-2 border-border text-center">
-                <div className="w-12 h-12 rounded-full bg-[oklch(0.97_0.01_195)] flex items-center justify-center mx-auto mb-4">
-                  <Mail className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+                <div className="w-12 h-12 rounded-full bg-[#F5F5F7] flex items-center justify-center mx-auto mb-4">
+                  <Mail className="h-5 w-5 text-[#3478F6]" />
                 </div>
                 <p className="font-semibold mb-1">Email Us</p>
-                <p className="text-sm text-muted-foreground">support@u2u.com</p>
+                <p className="text-sm text-muted-foreground">support@mobitrade.com</p>
                 <p className="text-xs text-muted-foreground mt-1">Response in 24h</p>
               </div>
               <div className="p-6 bg-white rounded-2xl border-2 border-border text-center">
-                <div className="w-12 h-12 rounded-full bg-[oklch(0.97_0.01_195)] flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+                <div className="w-12 h-12 rounded-full bg-[#F5F5F7] flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="h-5 w-5 text-[#3478F6]" />
                 </div>
                 <p className="font-semibold mb-1">Live Chat</p>
                 <p className="text-sm text-muted-foreground">Chat with us</p>

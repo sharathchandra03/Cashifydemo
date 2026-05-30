@@ -25,7 +25,7 @@ const paymentMethods = [
 export default function BookingPage() {
   const { sellFlow, resetSellFlow } = useAppStore();
   const [submitted, setSubmitted] = useState(false);
-  const [orderId] = useState(() => `U2U-${Math.random().toString(36).substring(2, 8).toUpperCase()}`);
+  const [orderId] = useState(() => `MBT-${Math.random().toString(36).substring(2, 8).toUpperCase()}`);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -48,21 +48,21 @@ export default function BookingPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+      <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
         <Navbar />
         <main className="flex-1 flex items-center justify-center p-4">
           <div className="max-w-md w-full bg-white rounded-2xl border-2 border-border p-8 text-center">
             <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
               <CheckCircle2 className="h-10 w-10 text-green-600" />
             </div>
-            <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.12_0.01_240)] mb-2">
+            <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#1D1D1F] mb-2">
               Booking Confirmed!
             </h1>
             <p className="text-muted-foreground mb-6">
               Your pickup has been scheduled. Our agent will arrive at your doorstep on the selected date.
             </p>
 
-            <div className="bg-[oklch(0.98_0.01_195)] rounded-xl p-4 mb-6 text-left">
+            <div className="bg-[#FBFBFD] rounded-xl p-4 mb-6 text-left">
               <div className="flex justify-between mb-2">
                 <span className="text-sm text-muted-foreground">Order ID</span>
                 <span className="font-medium">{orderId}</span>
@@ -77,7 +77,7 @@ export default function BookingPage() {
               </div>
               <div className="flex justify-between pt-2 border-t border-border">
                 <span className="text-sm font-medium">Final Amount</span>
-                <span className="font-bold text-[oklch(0.6_0.18_195)]">₹{sellFlow.finalPrice.toLocaleString()}</span>
+                <span className="font-bold text-[#3478F6]">₹{sellFlow.finalPrice.toLocaleString()}</span>
               </div>
             </div>
 
@@ -85,13 +85,13 @@ export default function BookingPage() {
               <Link
                 href="/"
                 onClick={() => resetSellFlow()}
-                className="flex-1 py-2.5 border-2 border-border text-[oklch(0.3_0.01_240)] rounded-xl font-medium hover:bg-[oklch(0.98_0.005_240)] transition-colors"
+                className="flex-1 py-2.5 border-2 border-border text-[#6E6E73] rounded-xl font-medium hover:bg-[#FBFBFD] transition-colors"
               >
                 Back to Home
               </Link>
               <button
                 onClick={() => {}}
-                className="flex-1 py-2.5 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)] transition-colors"
+                className="flex-1 py-2.5 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8] transition-colors"
               >
                 Track Order
               </button>
@@ -104,19 +104,19 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-8">
-          <Link href="/sell" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[oklch(0.6_0.18_195)] mb-6">
+          <Link href="/sell" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#3478F6] mb-6">
             <ArrowLeft className="h-4 w-4" /> Back to sell flow
           </Link>
 
           <div className="text-center mb-8">
-            <span className="text-xs font-semibold tracking-widest uppercase text-[oklch(0.6_0.18_195)] mb-2 block">
+            <span className="text-xs font-semibold tracking-widest uppercase text-[#3478F6] mb-2 block">
               Final Step
             </span>
-            <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl text-[oklch(0.12_0.01_240)] mb-3">
+            <h1 className="font-[family-name:var(--font-display)] font-bold text-3xl md:text-4xl text-[#1D1D1F] mb-3">
               Schedule Your Pickup
             </h1>
             <p className="text-muted-foreground max-w-lg mx-auto">
@@ -129,8 +129,8 @@ export default function BookingPage() {
             <form onSubmit={handleSubmit} className="md:col-span-2 space-y-6">
               {/* Personal Details */}
               <div className="bg-white rounded-2xl border-2 border-border p-6">
-                <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4 flex items-center gap-2">
-                  <User className="h-4 w-4 text-[oklch(0.6_0.18_195)]" />
+                <h3 className="font-semibold text-[#1D1D1F] mb-4 flex items-center gap-2">
+                  <User className="h-4 w-4 text-[#3478F6]" />
                   Personal Details
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -141,7 +141,7 @@ export default function BookingPage() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -152,7 +152,7 @@ export default function BookingPage() {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                       placeholder="10 digit mobile number"
                     />
                   </div>
@@ -163,7 +163,7 @@ export default function BookingPage() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -172,8 +172,8 @@ export default function BookingPage() {
 
               {/* Address */}
               <div className="bg-white rounded-2xl border-2 border-border p-6">
-                <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4 flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-[oklch(0.6_0.18_195)]" />
+                <h3 className="font-semibold text-[#1D1D1F] mb-4 flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-[#3478F6]" />
                   Pickup Address
                 </h3>
                 <div className="space-y-4">
@@ -184,7 +184,7 @@ export default function BookingPage() {
                       rows={3}
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none resize-none"
+                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none resize-none"
                       placeholder="House/Flat number, Street, Landmark"
                     />
                   </div>
@@ -196,7 +196,7 @@ export default function BookingPage() {
                         required
                         value={formData.city}
                         onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                        className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                         placeholder="City name"
                       />
                     </div>
@@ -207,7 +207,7 @@ export default function BookingPage() {
                         required
                         value={formData.pincode}
                         onChange={(e) => setFormData({ ...formData, pincode: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                        className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                         placeholder="6 digit PIN"
                       />
                     </div>
@@ -217,8 +217,8 @@ export default function BookingPage() {
 
               {/* Schedule */}
               <div className="bg-white rounded-2xl border-2 border-border p-6">
-                <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4 flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-[oklch(0.6_0.18_195)]" />
+                <h3 className="font-semibold text-[#1D1D1F] mb-4 flex items-center gap-2">
+                  <Calendar className="h-4 w-4 text-[#3478F6]" />
                   Schedule Pickup
                 </h3>
                 <div className="space-y-4">
@@ -230,7 +230,7 @@ export default function BookingPage() {
                       min={new Date().toISOString().split("T")[0]}
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                     />
                   </div>
                   <div>
@@ -244,8 +244,8 @@ export default function BookingPage() {
                           className={cn(
                             "p-3 rounded-xl text-sm font-medium transition-colors text-center",
                             formData.timeSlot === slot
-                              ? "bg-[oklch(0.6_0.18_195)] text-white"
-                              : "bg-[oklch(0.97_0.01_195)] text-[oklch(0.3_0.01_240)] hover:bg-[oklch(0.95_0.02_195)]"
+                              ? "bg-[#3478F6] text-white"
+                              : "bg-[#F5F5F7] text-[#6E6E73] hover:bg-[rgba(52,120,246,0.08)]"
                           )}
                         >
                           {slot}
@@ -258,8 +258,8 @@ export default function BookingPage() {
 
               {/* Payment Method */}
               <div className="bg-white rounded-2xl border-2 border-border p-6">
-                <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4 flex items-center gap-2">
-                  <Wallet className="h-4 w-4 text-[oklch(0.6_0.18_195)]" />
+                <h3 className="font-semibold text-[#1D1D1F] mb-4 flex items-center gap-2">
+                  <Wallet className="h-4 w-4 text-[#3478F6]" />
                   Payment Method
                 </h3>
                 <div className="space-y-3">
@@ -271,15 +271,15 @@ export default function BookingPage() {
                       className={cn(
                         "w-full flex items-center gap-3 p-4 rounded-xl border-2 transition-colors text-left",
                         formData.paymentMethod === method.id
-                          ? "border-[oklch(0.6_0.18_195)] bg-[oklch(0.98_0.01_195)]"
-                          : "border-border hover:border-[oklch(0.6_0.18_195/0.5)]"
+                          ? "border-[#3478F6] bg-[#FBFBFD]"
+                          : "border-border hover:border-[rgba(52,120,246,0.5)]"
                       )}
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[oklch(0.97_0.01_195)] flex items-center justify-center">
-                        <method.icon className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+                      <div className="w-10 h-10 rounded-lg bg-[#F5F5F7] flex items-center justify-center">
+                        <method.icon className="h-5 w-5 text-[#3478F6]" />
                       </div>
                       <div>
-                        <p className="font-medium text-sm text-[oklch(0.15_0.01_240)]">{method.name}</p>
+                        <p className="font-medium text-sm text-[#1D1D1F]">{method.name}</p>
                         <p className="text-xs text-muted-foreground">{method.description}</p>
                       </div>
                     </button>
@@ -293,7 +293,7 @@ export default function BookingPage() {
                       type="text"
                       value={formData.upiId}
                       onChange={(e) => setFormData({ ...formData, upiId: e.target.value })}
-                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                      className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                       placeholder="yourname@upi"
                     />
                   </div>
@@ -307,7 +307,7 @@ export default function BookingPage() {
                         type="text"
                         value={formData.accountNumber}
                         onChange={(e) => setFormData({ ...formData, accountNumber: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                        className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                         placeholder="Enter account number"
                       />
                     </div>
@@ -317,7 +317,7 @@ export default function BookingPage() {
                         type="text"
                         value={formData.ifsc}
                         onChange={(e) => setFormData({ ...formData, ifsc: e.target.value })}
-                        className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none"
+                        className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none"
                         placeholder="SBIN0001234"
                       />
                     </div>
@@ -327,7 +327,7 @@ export default function BookingPage() {
 
               <button
                 type="submit"
-                className="w-full py-4 bg-[oklch(0.68_0.19_45)] text-white font-semibold rounded-xl hover:bg-[oklch(0.62_0.19_45)] transition-colors"
+                className="w-full py-4 bg-[#0071E3] text-white font-semibold rounded-xl hover:bg-[#1D5FD8] transition-colors"
               >
                 Confirm Booking
               </button>
@@ -336,7 +336,7 @@ export default function BookingPage() {
             {/* Summary Card */}
             <div className="md:col-span-1">
               <div className="sticky top-24 bg-white rounded-2xl border-2 border-border p-5">
-                <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4">Order Summary</h3>
+                <h3 className="font-semibold text-[#1D1D1F] mb-4">Order Summary</h3>
                 <div className="space-y-2 mb-4 pb-4 border-b border-border">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Device</span>
@@ -349,7 +349,7 @@ export default function BookingPage() {
                 </div>
                 <div className="flex justify-between items-end">
                   <span className="text-sm text-muted-foreground">You Get</span>
-                  <span className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.6_0.18_195)]">
+                  <span className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#3478F6]">
                     ₹{sellFlow.finalPrice.toLocaleString()}
                   </span>
                 </div>

@@ -19,7 +19,7 @@ export default function VendorsPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[oklch(0.12_0.01_240)]">
+          <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl text-[#1D1D1F]">
             Vendor Management
           </h1>
           <p className="text-sm text-muted-foreground">
@@ -28,7 +28,7 @@ export default function VendorsPage() {
         </div>
         <button
           onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-2 px-4 py-2.5 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)] transition-colors"
+          className="flex items-center gap-2 px-4 py-2.5 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8] transition-colors"
         >
           <Plus className="h-4 w-4" /> Add Vendor
         </button>
@@ -37,7 +37,7 @@ export default function VendorsPage() {
       <div className="bg-white rounded-2xl border-2 border-border overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-[oklch(0.98_0.005_240)]">
+            <thead className="bg-[#FBFBFD]">
               <tr className="text-left text-xs font-medium text-muted-foreground">
                 <th className="px-4 py-3">Vendor</th>
                 <th className="px-4 py-3">Contact</th>
@@ -51,20 +51,20 @@ export default function VendorsPage() {
             </thead>
             <tbody className="text-sm">
               {vendorsData.map((vendor) => (
-                <tr key={vendor.id} className="border-t border-border hover:bg-[oklch(0.98_0.005_240)]">
+                <tr key={vendor.id} className="border-t border-border hover:bg-[#FBFBFD]">
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-[oklch(0.97_0.01_195)] flex items-center justify-center">
-                        <UserCircle className="h-6 w-6 text-[oklch(0.6_0.18_195)]" />
+                      <div className="w-10 h-10 rounded-full bg-[#F5F5F7] flex items-center justify-center">
+                        <UserCircle className="h-6 w-6 text-[#3478F6]" />
                       </div>
                       <div>
-                        <p className="font-medium text-[oklch(0.15_0.01_240)]">{vendor.name}</p>
+                        <p className="font-medium text-[#1D1D1F]">{vendor.name}</p>
                         <p className="text-xs text-muted-foreground">{vendor.id}</p>
                       </div>
                     </div>
                   </td>
                   <td className="px-4 py-3">
-                    <p className="font-medium text-[oklch(0.15_0.01_240)]">{vendor.contact}</p>
+                    <p className="font-medium text-[#1D1D1F]">{vendor.contact}</p>
                     <p className="text-xs text-muted-foreground">{vendor.phone}</p>
                   </td>
                   <td className="px-4 py-3">
@@ -74,7 +74,7 @@ export default function VendorsPage() {
                     </div>
                   </td>
                   <td className="px-4 py-3 font-medium">{vendor.sales}</td>
-                  <td className="px-4 py-3 font-medium text-[oklch(0.6_0.18_195)]">₹{(vendor.revenue / 100000).toFixed(1)}L</td>
+                  <td className="px-4 py-3 font-medium text-[#3478F6]">₹{(vendor.revenue / 100000).toFixed(1)}L</td>
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-1">
                       <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
@@ -90,7 +90,7 @@ export default function VendorsPage() {
                     </span>
                   </td>
                   <td className="px-4 py-3">
-                    <button className="p-1.5 rounded-lg hover:bg-[oklch(0.97_0.01_195)] text-[oklch(0.6_0.18_195)]">
+                    <button className="p-1.5 rounded-lg hover:bg-[#F5F5F7] text-[#3478F6]">
                       <Edit2 className="h-4 w-4" />
                     </button>
                   </td>
@@ -109,25 +109,25 @@ export default function VendorsPage() {
             <form className="space-y-4">
               <div>
                 <label className="text-sm font-medium mb-1.5 block">Business Name</label>
-                <input className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="Enter business name" />
+                <input className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="Enter business name" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Contact Person</label>
-                  <input className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="Full name" />
+                  <input className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="Full name" />
                 </div>
                 <div>
                   <label className="text-sm font-medium mb-1.5 block">Phone</label>
-                  <input className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="Phone number" />
+                  <input className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="Phone number" />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium mb-1.5 block">Email</label>
-                <input type="email" className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="Email address" />
+                <input type="email" className="w-full px-3 py-2.5 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="Email address" />
               </div>
               <div className="flex gap-3 pt-2">
-                <button type="button" onClick={() => setShowAddModal(false)} className="flex-1 py-2.5 border-2 border-border rounded-xl font-medium hover:bg-[oklch(0.98_0.005_240)]">Cancel</button>
-                <button type="submit" onClick={(e) => { e.preventDefault(); setShowAddModal(false); }} className="flex-1 py-2.5 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-medium hover:bg-[oklch(0.55_0.18_195)]">Add Vendor</button>
+                <button type="button" onClick={() => setShowAddModal(false)} className="flex-1 py-2.5 border-2 border-border rounded-xl font-medium hover:bg-[#FBFBFD]">Cancel</button>
+                <button type="submit" onClick={(e) => { e.preventDefault(); setShowAddModal(false); }} className="flex-1 py-2.5 bg-[#3478F6] text-white rounded-xl font-medium hover:bg-[#1D5FD8]">Add Vendor</button>
               </div>
             </form>
           </div>

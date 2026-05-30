@@ -63,8 +63,8 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6">
       {/* Welcome */}
-      <div className="bg-gradient-to-br from-[oklch(0.15_0.02_240)] to-[oklch(0.12_0.02_240)] rounded-2xl p-6 text-white">
-        <h1 className="font-[family-name:var(--font-display)] font-bold text-2xl mb-2">
+      <div className="bg-gradient-to-br from-[#0F044A] to-[#1a0d5c] rounded-[20px] p-6 text-white shadow-[0_24px_64px_rgba(15,4,74,0.25)]">
+        <h1 className="font-extrabold text-2xl mb-2 tracking-tight">
           Welcome back, {isSuperAdmin ? "Admin" : isBranch ? "Branch Manager" : "Vendor"}
         </h1>
         <p className="text-white/60 text-sm">
@@ -79,23 +79,23 @@ export default function DashboardPage() {
       {/* KPI Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {kpiCards.map((kpi) => (
-          <div key={kpi.label} className="bg-white rounded-2xl border-2 border-border p-4">
+          <div key={kpi.label} className="bg-white rounded-[20px] border border-black/[0.06] p-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
             <div className="flex items-center justify-between mb-3">
-              <div className="w-10 h-10 rounded-xl bg-[oklch(0.97_0.01_195)] flex items-center justify-center">
-                <kpi.icon className="h-5 w-5 text-[oklch(0.6_0.18_195)]" />
+              <div className="w-10 h-10 rounded-xl bg-[rgba(52,120,246,0.1)] flex items-center justify-center">
+                <kpi.icon className="h-5 w-5 text-[#3478F6]" />
               </div>
               <span className={cn(
                 "flex items-center gap-0.5 text-xs font-medium",
-                kpi.trend === "up" ? "text-green-600" : kpi.trend === "down" ? "text-red-600" : "text-muted-foreground"
+                kpi.trend === "up" ? "text-[#34C759]" : kpi.trend === "down" ? "text-[#FF3B30]" : "text-[#6E6E73]"
               )}>
                 {kpi.trend === "up" ? <TrendingUp className="h-3 w-3" /> : kpi.trend === "down" ? <TrendingDown className="h-3 w-3" /> : null}
                 {kpi.change}
               </span>
             </div>
-            <p className="text-2xl font-[family-name:var(--font-display)] font-bold text-[oklch(0.12_0.01_240)]">
+            <p className="text-2xl font-extrabold text-[#1D1D1F] tracking-tight">
               {kpi.value}
             </p>
-            <p className="text-xs text-muted-foreground">{kpi.label}</p>
+            <p className="text-xs text-[#6E6E73]">{kpi.label}</p>
           </div>
         ))}
       </div>
@@ -103,10 +103,10 @@ export default function DashboardPage() {
       {/* Charts Section */}
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Main Chart */}
-        <div className="lg:col-span-2 bg-white rounded-2xl border-2 border-border p-5">
+        <div className="lg:col-span-2 bg-white rounded-2xl border border-black/[0.06] p-5">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-semibold text-[oklch(0.15_0.01_240)]">Sales & Purchases Overview</h3>
-            <select className="text-sm border-2 border-border rounded-lg px-2 py-1">
+            <h3 className="font-semibold text-[#1D1D1F]">Sales & Purchases Overview</h3>
+            <select className="text-sm border border-black/[0.06] rounded-lg px-2 py-1">
               <option>Last 7 Days</option>
               <option>Last 30 Days</option>
               <option>This Month</option>
@@ -117,39 +117,39 @@ export default function DashboardPage() {
               <AreaChart data={salesData}>
                 <defs>
                   <linearGradient id="colorSales" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="oklch(0.6_0.18_195)" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="oklch(0.6_0.18_195)" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#3478F6" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#3478F6" stopOpacity={0}/>
                   </linearGradient>
                   <linearGradient id="colorPurchases" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="oklch(0.68_0.19_45)" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="oklch(0.68_0.19_45)" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#0071E3" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#0071E3" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="oklch(0.9_0.01_240)" />
-                <XAxis dataKey="name" stroke="oklch(0.5_0.01_240)" fontSize={12} />
-                <YAxis stroke="oklch(0.5_0.01_240)" fontSize={12} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E5E5" />
+                <XAxis dataKey="name" stroke="#6E6E73" fontSize={12} />
+                <YAxis stroke="#6E6E73" fontSize={12} />
                 <Tooltip />
-                <Area type="monotone" dataKey="sales" stroke="oklch(0.6_0.18_195)" fillOpacity={1} fill="url(#colorSales)" />
-                <Area type="monotone" dataKey="purchases" stroke="oklch(0.68_0.19_45)" fillOpacity={1} fill="url(#colorPurchases)" />
+                <Area type="monotone" dataKey="sales" stroke="#3478F6" fillOpacity={1} fill="url(#colorSales)" />
+                <Area type="monotone" dataKey="purchases" stroke="#0071E3" fillOpacity={1} fill="url(#colorPurchases)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         {/* Top Devices */}
-        <div className="bg-white rounded-2xl border-2 border-border p-5">
-          <h3 className="font-semibold text-[oklch(0.15_0.01_240)] mb-4">Top Selling Devices</h3>
+        <div className="bg-white rounded-2xl border border-black/[0.06] p-5">
+          <h3 className="font-semibold text-[#1D1D1F] mb-4">Top Selling Devices</h3>
           <div className="space-y-3">
             {topDevices.map((device, i) => (
               <div key={device.name} className="flex items-center gap-3">
-                <span className="w-6 h-6 rounded-full bg-[oklch(0.97_0.01_195)] flex items-center justify-center text-xs font-medium text-[oklch(0.6_0.18_195)]">
+                <span className="w-6 h-6 rounded-full bg-[#F5F5F7] flex items-center justify-center text-xs font-medium text-[#3478F6]">
                   {i + 1}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-[oklch(0.15_0.01_240)] truncate">{device.name}</p>
+                  <p className="text-sm font-medium text-[#1D1D1F] truncate">{device.name}</p>
                   <p className="text-xs text-muted-foreground">{device.sales} sold</p>
                 </div>
-                <span className="text-sm font-semibold text-[oklch(0.6_0.18_195)]">
+                <span className="text-sm font-semibold text-[#3478F6]">
                   ₹{(device.revenue / 100000).toFixed(1)}L
                 </span>
               </div>
@@ -159,10 +159,10 @@ export default function DashboardPage() {
       </div>
 
       {/* Recent Activity */}
-      <div className="bg-white rounded-2xl border-2 border-border p-5">
+      <div className="bg-white rounded-2xl border border-black/[0.06] p-5">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="font-semibold text-[oklch(0.15_0.01_240)]">Recent Activity</h3>
-          <button className="text-sm text-[oklch(0.6_0.18_195)] hover:underline">View All</button>
+          <h3 className="font-semibold text-[#1D1D1F]">Recent Activity</h3>
+          <button className="text-sm text-[#3478F6] hover:underline">View All</button>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -184,11 +184,11 @@ export default function DashboardPage() {
                         "w-2 h-2 rounded-full",
                         activity.type === "sale" ? "bg-green-500" : "bg-blue-500"
                       )} />
-                      <span className="font-medium text-[oklch(0.15_0.01_240)]">{activity.device}</span>
+                      <span className="font-medium text-[#1D1D1F]">{activity.device}</span>
                     </div>
                   </td>
                   <td className="py-3 text-muted-foreground">{activity.user}</td>
-                  <td className="py-3 font-medium text-[oklch(0.15_0.01_240)]">₹{activity.price.toLocaleString()}</td>
+                  <td className="py-3 font-medium text-[#1D1D1F]">₹{activity.price.toLocaleString()}</td>
                   <td className="py-3">
                     <span className={cn(
                       "px-2 py-0.5 rounded-full text-xs font-medium",

@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { Search, Menu, X, ChevronDown, MapPin, Phone } from "lucide-react";
+import { Search, Menu, X, ChevronDown, MapPin, Phone, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -25,39 +26,44 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-      {/* Top strip */}
-      <div className="bg-[oklch(0.6_0.18_195)] text-white text-xs py-1.5 px-4">
+    <header className="sticky top-0 z-50">
+      {/* Top strip - Deep Navy */}
+      <div className="bg-[#0F044A] text-white text-xs py-2 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <span className="flex items-center gap-1.5">
-            <MapPin className="h-3 w-3" /> Delivering across India
+          <span className="flex items-center gap-1.5 text-white/80">
+            <Sparkles className="h-3 w-3 text-[#3478F6]" /> 
+            <span className="font-medium">India&apos;s #1 Device Marketplace</span>
           </span>
-          <div className="hidden sm:flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-4 text-white/70">
+            <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> All Cities</span>
+            <span className="text-white/30">|</span>
             <span className="flex items-center gap-1"><Phone className="h-3 w-3" /> 1800-XXX-XXXX</span>
-            <span>|</span>
-            <Link href="/track" className="hover:underline">Track Order</Link>
-            <span>|</span>
-            <Link href="/franchise" className="hover:underline">Franchise</Link>
           </div>
         </div>
       </div>
 
-      {/* Main nav */}
-      <nav className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      {/* Main nav - White with subtle shadow */}
+      <nav className="bg-white/95 backdrop-blur-md border-b border-black/[0.06] shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1 shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-[oklch(0.6_0.18_195)] flex items-center justify-center">
-            <span className="text-white font-[family-name:var(--font-display)] font-800 text-sm leading-none">U</span>
-          </div>
-          <span className="font-[family-name:var(--font-display)] font-extrabold text-xl text-[oklch(0.12_0.01_240)]">
-            2U
-          </span>
+        <Link
+          href="/"
+          className="flex items-center gap-2 shrink-0 group"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <Image
+            src="/MobitradeLogo.png"
+            alt="MobiTrade"
+            width={280}
+            height={80}
+            className="h-[72px] w-auto object-contain -my-2"
+          />
         </Link>
 
-        {/* Search bar */}
-        <div className="hidden md:flex flex-1 max-w-lg relative">
-          <div className="flex w-full rounded-xl border-2 border-[oklch(0.6_0.18_195)] overflow-hidden shadow-sm">
-            <select className="bg-[oklch(0.96_0.01_195)] text-sm px-3 py-2 border-r border-[oklch(0.6_0.18_195)] text-[oklch(0.4_0.01_240)] outline-none cursor-pointer">
+        {/* Search bar - Pill shaped */}
+        <div className="hidden md:flex flex-1 max-w-md relative">
+          <div className="flex w-full rounded-full border border-black/[0.09] overflow-hidden bg-[#FBFBFD] hover:border-black/[0.2] transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.03)]">
+            <select className="bg-transparent text-sm px-4 py-2.5 border-r border-black/[0.09] text-[#6E6E73] outline-none cursor-pointer font-medium">
               <option>All</option>
               <option>Phones</option>
               <option>Laptops</option>
@@ -66,15 +72,15 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Search for a device..."
-              className="flex-1 px-3 py-2 text-sm outline-none bg-white"
+              className="flex-1 px-4 py-2.5 text-sm outline-none bg-transparent text-[#1D1D1F] placeholder:text-[#A1A1A6]"
             />
-            <button className="bg-[oklch(0.6_0.18_195)] px-4 flex items-center justify-center hover:bg-[oklch(0.55_0.18_195)] transition-colors">
+            <button className="bg-[#3478F6] px-5 flex items-center justify-center hover:bg-[#1D5FD8] transition-all duration-300 m-1 rounded-full">
               <Search className="h-4 w-4 text-white" />
             </button>
           </div>
         </div>
 
-        {/* Nav links — desktop */}
+        {/* Nav links - desktop */}
         <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <div
@@ -86,20 +92,20 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 className={cn(
-                  "flex items-center gap-0.5 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                  "text-[oklch(0.3_0.01_240)] hover:text-[oklch(0.6_0.18_195)] hover:bg-[oklch(0.96_0.01_195)]"
+                  "flex items-center gap-0.5 px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300",
+                  "text-[#6E6E73] hover:text-[#3478F6] hover:bg-[rgba(52,120,246,0.08)]"
                 )}
               >
                 {link.label}
-                {link.children && <ChevronDown className="h-3 w-3" />}
+                {link.children && <ChevronDown className="h-3.5 w-3.5" />}
               </Link>
               {link.children && activeDropdown === link.label && (
-                <div className="absolute top-full left-0 bg-white rounded-xl shadow-xl border border-border p-2 w-48 z-50">
+                <div className="absolute top-full left-0 mt-2 bg-white rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.12)] border border-black/[0.06] p-2 w-52 z-50 overflow-hidden">
                   {link.children.map((child) => (
                     <Link
                       key={child}
                       href="#"
-                      className="block px-3 py-2 text-sm text-[oklch(0.35_0.01_240)] hover:bg-[oklch(0.96_0.01_195)] hover:text-[oklch(0.6_0.18_195)] rounded-lg transition-colors"
+                      className="block px-4 py-2.5 text-sm font-medium text-[#1D1D1F] hover:bg-[#F5F5F7] hover:text-[#3478F6] rounded-xl transition-colors"
                     >
                       {child}
                     </Link>
@@ -111,38 +117,39 @@ export default function Navbar() {
         </div>
 
         {/* CTA + mobile toggle */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-3 shrink-0">
           <Link
             href="/login"
-            className="hidden sm:block text-sm font-medium text-[oklch(0.35_0.01_240)] hover:text-[oklch(0.6_0.18_195)] transition-colors px-3 py-2"
+            className="hidden sm:block text-sm font-semibold text-[#6E6E73] hover:text-[#3478F6] transition-colors px-4 py-2"
           >
             Login
           </Link>
           <Link
             href="/sell"
-            className="bg-[oklch(0.68_0.19_45)] hover:bg-[oklch(0.62_0.19_45)] text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors shadow-sm"
+            className="bg-[#3478F6] hover:bg-[#1D5FD8] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-350 shadow-[0_4px_16px_rgba(52,120,246,0.35)] hover:shadow-[0_8px_24px_rgba(52,120,246,0.5)] hover:-translate-y-0.5"
           >
-            Sell Now
+            Sell Device
           </Link>
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="lg:hidden p-2.5 rounded-xl hover:bg-[#F5F5F7] transition-colors text-[#1D1D1F]"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
+      </div>
       </nav>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-white px-4 py-4 space-y-1 animate-in slide-in-from-top-2 duration-200">
-          <div className="flex w-full rounded-xl border-2 border-[oklch(0.6_0.18_195)] overflow-hidden mb-4">
+        <div className="lg:hidden border-t border-black/[0.06] bg-white/98 backdrop-blur-xl px-4 py-5 space-y-1 shadow-[0_24px_64px_rgba(0,0,0,0.12)]">
+          <div className="flex w-full rounded-full border border-black/[0.09] overflow-hidden bg-[#FBFBFD] mb-4">
             <input
               type="text"
               placeholder="Search..."
-              className="flex-1 px-3 py-2 text-sm outline-none"
+              className="flex-1 px-4 py-3 text-sm outline-none bg-transparent"
             />
-            <button className="bg-[oklch(0.6_0.18_195)] px-3">
+            <button className="bg-[#3478F6] px-4 m-1 rounded-full">
               <Search className="h-4 w-4 text-white" />
             </button>
           </div>
@@ -150,18 +157,26 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="block px-3 py-2.5 text-sm font-medium text-[oklch(0.3_0.01_240)] hover:bg-[oklch(0.96_0.01_195)] rounded-lg transition-colors"
+              className="block px-4 py-3 text-sm font-semibold text-[#1D1D1F] hover:bg-[#F5F5F7] hover:text-[#3478F6] rounded-xl transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/login"
-            className="block px-3 py-2.5 text-sm font-medium text-[oklch(0.3_0.01_240)] hover:bg-[oklch(0.96_0.01_195)] rounded-lg transition-colors"
-          >
-            Login / Sign Up
-          </Link>
+          <div className="pt-2 mt-2 border-t border-black/[0.06]">
+            <Link
+              href="/login"
+              className="block px-4 py-3 text-sm font-semibold text-[#6E6E73] hover:text-[#3478F6] rounded-xl transition-colors"
+            >
+              Login / Sign Up
+            </Link>
+            <Link
+              href="/sell"
+              className="block mx-4 mt-2 bg-[#3478F6] text-white text-center text-sm font-semibold px-5 py-3 rounded-full shadow-[0_4px_16px_rgba(52,120,246,0.35)]"
+            >
+              Sell Your Device
+            </Link>
+          </div>
         </div>
       )}
     </header>

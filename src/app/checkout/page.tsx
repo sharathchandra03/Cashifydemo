@@ -38,12 +38,12 @@ export default function CheckoutPage() {
 
   if (cart.length === 0 && !orderPlaced) {
     return (
-      <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+      <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
         <Navbar />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <p className="text-muted-foreground mb-4">Your cart is empty</p>
-            <Link href="/buy" className="text-[oklch(0.6_0.18_195)] font-medium hover:underline">
+            <Link href="/buy" className="text-[#3478F6] font-medium hover:underline">
               Continue Shopping
             </Link>
           </div>
@@ -55,7 +55,7 @@ export default function CheckoutPage() {
 
   if (orderPlaced) {
     return (
-      <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+      <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
         <Navbar />
         <main className="flex-1 flex items-center justify-center py-16 px-4">
           <div className="text-center max-w-md">
@@ -68,18 +68,18 @@ export default function CheckoutPage() {
             </p>
             <div className="bg-white rounded-2xl border-2 border-border p-4 mb-6">
               <p className="text-sm text-muted-foreground">Order ID</p>
-              <p className="font-bold text-lg">U2U-ORD-{Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
+              <p className="font-bold text-lg">MBT-ORD-{Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
             </div>
             <div className="flex gap-3">
               <Link
                 href="/track"
-                className="flex-1 py-3 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-semibold hover:bg-[oklch(0.55_0.18_195)]"
+                className="flex-1 py-3 bg-[#3478F6] text-white rounded-xl font-semibold hover:bg-[#1D5FD8]"
               >
                 Track Order
               </Link>
               <Link
                 href="/buy"
-                className="flex-1 py-3 border-2 border-border rounded-xl font-semibold hover:bg-[oklch(0.98_0.005_240)]"
+                className="flex-1 py-3 border-2 border-border rounded-xl font-semibold hover:bg-[#FBFBFD]"
               >
                 Continue Shopping
               </Link>
@@ -92,11 +92,11 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[oklch(0.98_0.005_240)]">
+    <div className="min-h-screen flex flex-col bg-[#FBFBFD]">
       <Navbar />
       <main className="flex-1 py-8 px-4">
         <div className="max-w-4xl mx-auto">
-          <Link href="/cart" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[oklch(0.6_0.18_195)] mb-6">
+          <Link href="/cart" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[#3478F6] mb-6">
             <ChevronLeft className="h-4 w-4" /> Back to Cart
           </Link>
 
@@ -106,11 +106,11 @@ export default function CheckoutPage() {
               <div key={s} className="flex items-center gap-2">
                 <div className={cn(
                   "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium",
-                  step > i + 1 ? "bg-green-500 text-white" : step === i + 1 ? "bg-[oklch(0.6_0.18_195)] text-white" : "bg-gray-200 text-gray-500"
+                  step > i + 1 ? "bg-green-500 text-white" : step === i + 1 ? "bg-[#3478F6] text-white" : "bg-gray-200 text-gray-500"
                 )}>
                   {step > i + 1 ? <CheckCircle2 className="h-4 w-4" /> : i + 1}
                 </div>
-                <span className={cn("text-sm font-medium", step === i + 1 ? "text-[oklch(0.15_0.01_240)]" : "text-muted-foreground")}>{s}</span>
+                <span className={cn("text-sm font-medium", step === i + 1 ? "text-[#1D1D1F]" : "text-muted-foreground")}>{s}</span>
                 {i < 2 && <div className="w-8 h-0.5 bg-gray-200 mx-2" />}
               </div>
             ))}
@@ -121,7 +121,7 @@ export default function CheckoutPage() {
               {step === 1 && (
                 <div className="bg-white rounded-2xl border-2 border-border p-6">
                   <h2 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                    <MapPin className="h-5 w-5 text-[oklch(0.6_0.18_195)]" /> Delivery Address
+                    <MapPin className="h-5 w-5 text-[#3478F6]" /> Delivery Address
                   </h2>
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
@@ -129,43 +129,43 @@ export default function CheckoutPage() {
                         <label className="text-sm font-medium mb-1.5 block">Full Name</label>
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                          <input type="text" className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="John Doe" />
+                          <input type="text" className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="John Doe" />
                         </div>
                       </div>
                       <div>
                         <label className="text-sm font-medium mb-1.5 block">Phone</label>
                         <div className="relative">
                           <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                          <input type="tel" className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="+91 9876543210" />
+                          <input type="tel" className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="+91 9876543210" />
                         </div>
                       </div>
                     </div>
                     <div>
                       <label className="text-sm font-medium mb-1.5 block">Address Line 1</label>
-                      <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="Street address" />
+                      <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="Street address" />
                     </div>
                     <div>
                       <label className="text-sm font-medium mb-1.5 block">Address Line 2 (Optional)</label>
-                      <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="Apartment, suite, etc." />
+                      <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="Apartment, suite, etc." />
                     </div>
                     <div className="grid grid-cols-3 gap-4">
                       <div>
                         <label className="text-sm font-medium mb-1.5 block">City</label>
-                        <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="Mumbai" />
+                        <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="Mumbai" />
                       </div>
                       <div>
                         <label className="text-sm font-medium mb-1.5 block">State</label>
-                        <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="Maharashtra" />
+                        <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="Maharashtra" />
                       </div>
                       <div>
                         <label className="text-sm font-medium mb-1.5 block">PIN Code</label>
-                        <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[oklch(0.6_0.18_195)] focus:outline-none" placeholder="400001" />
+                        <input type="text" className="w-full px-4 py-3 rounded-xl border-2 border-border focus:border-[#3478F6] focus:outline-none" placeholder="400001" />
                       </div>
                     </div>
                   </div>
                   <button
                     onClick={() => setStep(2)}
-                    className="w-full mt-6 py-3 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-semibold hover:bg-[oklch(0.55_0.18_195)]"
+                    className="w-full mt-6 py-3 bg-[#3478F6] text-white rounded-xl font-semibold hover:bg-[#1D5FD8]"
                   >
                     Continue to Payment
                   </button>
@@ -175,12 +175,12 @@ export default function CheckoutPage() {
               {step === 2 && (
                 <div className="bg-white rounded-2xl border-2 border-border p-6">
                   <h2 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                    <CreditCard className="h-5 w-5 text-[oklch(0.6_0.18_195)]" /> Payment Method
+                    <CreditCard className="h-5 w-5 text-[#3478F6]" /> Payment Method
                   </h2>
                   <div className="space-y-3">
                     {paymentMethods.map((method) => (
-                      <label key={method.id} className="flex items-center gap-4 p-4 border-2 border-border rounded-xl cursor-pointer hover:border-[oklch(0.6_0.18_195)] transition-colors">
-                        <input type="radio" name="payment" value={method.id} defaultChecked={method.id === "upi"} className="w-4 h-4 accent-[oklch(0.6_0.18_195)]" />
+                      <label key={method.id} className="flex items-center gap-4 p-4 border-2 border-border rounded-xl cursor-pointer hover:border-[#3478F6] transition-colors">
+                        <input type="radio" name="payment" value={method.id} defaultChecked={method.id === "upi"} className="w-4 h-4 accent-[#3478F6]" />
                         <div className="text-2xl">{method.icon}</div>
                         <div className="flex-1">
                           <p className="font-medium">{method.name}</p>
@@ -192,13 +192,13 @@ export default function CheckoutPage() {
                   <div className="flex gap-3 mt-6">
                     <button
                       onClick={() => setStep(1)}
-                      className="flex-1 py-3 border-2 border-border rounded-xl font-semibold hover:bg-[oklch(0.98_0.005_240)]"
+                      className="flex-1 py-3 border-2 border-border rounded-xl font-semibold hover:bg-[#FBFBFD]"
                     >
                       Back
                     </button>
                     <button
                       onClick={() => setStep(3)}
-                      className="flex-1 py-3 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-semibold hover:bg-[oklch(0.55_0.18_195)]"
+                      className="flex-1 py-3 bg-[#3478F6] text-white rounded-xl font-semibold hover:bg-[#1D5FD8]"
                     >
                       Review Order
                     </button>
@@ -212,7 +212,7 @@ export default function CheckoutPage() {
                   <div className="space-y-4 mb-6">
                     {cart.map((item) => (
                       <div key={item.id} className="flex gap-4">
-                        <div className="w-16 h-16 bg-[oklch(0.98_0.005_240)] rounded-lg flex items-center justify-center">
+                        <div className="w-16 h-16 bg-[#FBFBFD] rounded-lg flex items-center justify-center">
                           <span className="text-2xl">📱</span>
                         </div>
                         <div className="flex-1">
@@ -234,20 +234,20 @@ export default function CheckoutPage() {
                     </div>
                     <div className="flex justify-between font-semibold text-lg pt-2">
                       <span>Total</span>
-                      <span className="text-[oklch(0.6_0.18_195)]">₹{total.toLocaleString()}</span>
+                      <span className="text-[#3478F6]">₹{total.toLocaleString()}</span>
                     </div>
                   </div>
                   <div className="flex gap-3 mt-6">
                     <button
                       onClick={() => setStep(2)}
-                      className="flex-1 py-3 border-2 border-border rounded-xl font-semibold hover:bg-[oklch(0.98_0.005_240)]"
+                      className="flex-1 py-3 border-2 border-border rounded-xl font-semibold hover:bg-[#FBFBFD]"
                     >
                       Back
                     </button>
                     <button
                       onClick={handlePlaceOrder}
                       disabled={loading}
-                      className="flex-1 py-3 bg-[oklch(0.6_0.18_195)] text-white rounded-xl font-semibold hover:bg-[oklch(0.55_0.18_195)] disabled:opacity-50 flex items-center justify-center gap-2"
+                      className="flex-1 py-3 bg-[#3478F6] text-white rounded-xl font-semibold hover:bg-[#1D5FD8] disabled:opacity-50 flex items-center justify-center gap-2"
                     >
                       {loading ? "Processing..." : <><Lock className="h-4 w-4" /> Place Order</>}
                     </button>
@@ -270,7 +270,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex justify-between pt-3 border-t border-border font-semibold">
                   <span>Total</span>
-                  <span className="text-lg text-[oklch(0.6_0.18_195)]">₹{total.toLocaleString()}</span>
+                  <span className="text-lg text-[#3478F6]">₹{total.toLocaleString()}</span>
                 </div>
               </div>
               <div className="mt-4 p-3 bg-green-50 rounded-lg">
